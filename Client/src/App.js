@@ -7,6 +7,7 @@ import ProductsPage from "./PageComponents/ProductsPage";
 import ItemPage from "./PageComponents/ItemPage";
 import Login from "./PageComponents/Login";
 import Signup from "./PageComponents/Signup";
+import Search from "./PageComponents/Search";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="product/:id" element={<ItemPage />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
+            <Route path="search/:input" element={<Search />} />
           </Route>
         </Routes>
         <Footer />

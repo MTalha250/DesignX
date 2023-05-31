@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import logo from "../logo.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const categories = [
   {
@@ -144,6 +144,8 @@ const categories = [
 ];
 
 const Nav = () => {
+  const [input, setInput] = useState();
+  const navigate = useNavigate();
   return (
     <div>
       <div className="w-full flex justify-between py-4 px-10 items-center shadow">
@@ -155,16 +157,32 @@ const Nav = () => {
             type="text"
             className="outline-none w-full bg-transparent"
             placeholder="Search"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                if (input) {
+                  navigate(`search/${input}`);
+                }
+              }
+            }}
           />
-          <button className="border-l px-6 text-yellow-500 border-black">
+          <button
+            className="border-l px-6 text-yellow-500 border-black"
+            onClick={() => {
+              if (input) {
+                navigate(`search/${input}`);
+              }
+            }}
+          >
             <SearchIcon className="scale-150" />
           </button>
         </div>
         <div>
-          <Link to="/login">
+          <Link to="login">
             <PermIdentityOutlinedIcon className="scale-150 mx-3.5" />
           </Link>
-          <Link to="/wishlist">
+          <Link to="wishlist">
             <FavoriteBorderOutlinedIcon className="scale-125 mx-3.5" />
           </Link>
         </div>
