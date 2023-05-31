@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 const categories = [
   {
     name: "Bedroom",
+    img: "https://interwood.pk/media/catalog/categorymenu/Beds.jpg",
     subCategories: [
       {
         name: "BEDS",
@@ -35,6 +36,7 @@ const categories = [
   },
   {
     name: "Living",
+    img: "https://interwood.pk/media/catalog/categorymenu/living-room-furniture_2.jpg",
     subCategories: [
       {
         name: "SOFAS",
@@ -68,6 +70,7 @@ const categories = [
   },
   {
     name: "Study",
+    img: "https://interwood.pk/media/catalog/categorymenu/study_table_1.jpg",
     subCategories: [
       {
         name: "HOME OFFICE DESKS",
@@ -77,6 +80,7 @@ const categories = [
   },
   {
     name: "Kids",
+    img: "https://interwood.pk/media/catalog/categorymenu/kids_furniture_4.jpg",
     subCategories: [
       {
         name: "KIDS BEDS",
@@ -98,45 +102,126 @@ const categories = [
   },
   {
     name: "Dining",
+    img: "https://interwood.pk/media/catalog/categorymenu/dining_room_furniture_1.jpg",
     subCategories: [
       {
-        name: "HOME OFFICE DESKS",
+        name: "KITCHEN & DINING ROOM FURNITURE",
         type: [],
       },
     ],
   },
   {
     name: "Office",
+    img: "https://interwood.pk/media/catalog/categorymenu/office_furniture.jpg",
     subCategories: [
       {
-        name: "HOME OFFICE DESKS",
+        name: "OFFICE TABLES",
+        type: [],
+      },
+      {
+        name: "OFFICE CHAIRS",
+        type: [],
+      },
+      {
+        name: "WORKSTATIONS",
+        type: [],
+      },
+      {
+        name: "SEATING",
+        type: [],
+      },
+      {
+        name: "CO-WORKING SPACES",
+        type: [],
+      },
+      {
+        name: "OFFICE EXECUTIVE FURNITURE SETS",
+        type: [],
+      },
+      {
+        name: "STORAGE",
         type: [],
       },
     ],
   },
   {
     name: "Kitchens",
+    img: "https://interwood.pk/media/catalog/categorymenu/kitchen_design_2.jpg",
     subCategories: [
       {
-        name: "HOME OFFICE DESKS",
+        name: "KITCHEN DESIGNS",
+        type: [],
+      },
+      {
+        name: "KITCHEN ACCESSORIES",
+        type: [],
+      },
+      {
+        name: "KITCHEN APPLIANCES",
         type: [],
       },
     ],
   },
   {
     name: "Doors",
+    img: "https://interwood.pk/media/catalog/categorymenu/door_designs_in_Pakistan_1.jpg",
     subCategories: [
       {
-        name: "HOME OFFICE DESKS",
+        name: "MAIN DOORS",
+        type: [],
+      },
+      {
+        name: "PANEL DOORS",
+        type: [],
+      },
+      {
+        name: "GLASS DOORS",
+        type: [],
+      },
+      {
+        name: "VENEER DOOR",
+        type: [],
+      },
+      {
+        name: "THERMOSET DOORS",
+        type: [],
+      },
+      {
+        name: "PAINTED DOOR",
+        type: [],
+      },
+      {
+        name: "LAMINATED DOOR",
+        type: [],
+      },
+      {
+        name: "SLIDING DOORS",
         type: [],
       },
     ],
   },
   {
     name: "Wardrobes",
+    img: "https://interwood.pk/media/catalog/categorymenu/wardrobe_design_2.jpg",
     subCategories: [
       {
-        name: "HOME OFFICE DESKS",
+        name: "BUILT-IN WARDROBES",
+        type: [],
+      },
+      {
+        name: "3 DOORS WARDROBES",
+        type: [],
+      },
+      {
+        name: "SLIDING WARDROBES",
+        type: [],
+      },
+      {
+        name: "4 DOORS WARDROBES",
+        type: [],
+      },
+      {
+        name: "2 DOORS WARDROBES",
         type: [],
       },
     ],
@@ -187,38 +272,41 @@ const Nav = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full flex justify-center p-2  shadow top-0">
+      <div className="hidden md:flex w-full flex-wrap justify-center p-2  shadow top-0">
         {categories.map((c, i) => (
-          <div key={i} className="relative group">
+          <div key={i} className="group">
             <Link
               to={`products/${c.name}`}
-              className="border-b-4 border-white hover:border-yellow-500 hover:text-yellow-500 px-3 py-2 block text-lg"
+              className="font-light border-b-4 border-white hover:border-yellow-500 hover:text-yellow-500 px-3 py-2 block text-lg"
             >
               {c.name} <KeyboardArrowDownOutlinedIcon />
             </Link>
-            <div className="whitespace-nowrap shadow z-10 flex absolute opacity-0 invisible bg-white group-hover:opacity-100 group-hover:visible transition duration-300 p-4">
-              {c.subCategories.map((s, i) => (
-                <div className="p-4 shrink-0" key={i}>
-                  <Link
-                    to={`products/${c.name}/${s.name}`}
-                    className="text-sm font-semibold p-1 border-b block"
-                  >
-                    {s.name}
-                  </Link>
-                  <ul>
-                    {s.type.map((t, i) => (
-                      <li key={i} className="w-full ">
-                        <Link
-                          to={`products/${c.name}/${s.name}/${t}`}
-                          className="p-1 border-b w-full block text-gray-500 text-sm"
-                        >
-                          {t}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <div className="left-1/2 -translate-x-1/2 md:w-full lg:w-[75%] shadow z-10 flex justify-between absolute opacity-0 invisible bg-white group-hover:opacity-100 group-hover:visible transition duration-300 p-4">
+              <div className="flex w-1/2 flex-wrap flex-col h-[30vh]">
+                {c.subCategories.map((s, i) => (
+                  <div className="p-4" key={i}>
+                    <Link
+                      to={`products/${c.name}/${s.name}`}
+                      className="text-sm font-semibold p-1 border-b block"
+                    >
+                      {s.name}
+                    </Link>
+                    <ul>
+                      {s.type.map((t, i) => (
+                        <li key={i} className="w-full">
+                          <Link
+                            to={`products/${c.name}/${s.name}/${t}`}
+                            className="p-1 border-b w-full block text-gray-500 text-sm"
+                          >
+                            {t}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <img src={c.img} alt="" className="w-[25%]" />
             </div>
           </div>
         ))}
