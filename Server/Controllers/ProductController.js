@@ -5,11 +5,7 @@ module.exports = {
     productModel
       .create({
         imgs: req.files.map((r) => r.path),
-        name: req.body.name,
-        price: req.body.price,
-        description: req.body.description,
-        category: req.body.category,
-        stock: req.body.stock,
+        ...req.body,
       })
       .then(() => {
         res.send({ message: "Item Inserted Successfully" });
@@ -37,11 +33,7 @@ module.exports = {
     productModel
       .findByIdAndUpdate(req.params.id, {
         imgs: req.files.map((r) => r.path),
-        name: req.body.name,
-        price: req.body.price,
-        description: req.body.description,
-        category: req.body.category,
-        stock: req.body.stock,
+        ...req.body,
       })
       .then(() => {
         res.send({ message: "Product Updated" });
