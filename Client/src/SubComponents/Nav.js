@@ -11,12 +11,14 @@ import logo from "../logo.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import Categories from "./Categories";
 import { DataContext } from "../Context/DataContext";
+import { UserContext } from "../Context/UserContext";
 import Collapsible from "react-collapsible";
 
 const Nav = () => {
   const [input, setInput] = useState("");
   const [sidebar, setSidebar] = useState("scale-x-0");
   const [data, setData] = useContext(DataContext);
+  const [userData, setUserData] = useContext(UserContext);
   const navigate = useNavigate();
   const categories = Categories();
   const [sticky, setSticky] = useState();
@@ -85,16 +87,36 @@ const Nav = () => {
             </div>
           )}
         </div>
-        <div>
-          <Link to="login">
-            <PermIdentityOutlinedIcon className="sm:scale-125 lg:scale-150 2xl:scale-[2] mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10" />
-          </Link>
+        <div className="flex">
+          {userData ? (
+            <button className="relative group sm:text-lg  font-semibold sm:font-bold">
+              Hi,{userData.fname}
+              <div className="p-2 hidden group-hover:block absolute bg-white shadow z-50">
+                <Link to="account" className="font-light border-b p-1">
+                  Account
+                </Link>
+                <button
+                  className="font-light p-1 whitespace-nowrap"
+                  onClick={() => {
+                    setUserData("");
+                    localStorage.removeItem("User");
+                  }}
+                >
+                  Sign Out
+                </button>
+              </div>
+            </button>
+          ) : (
+            <Link to="login">
+              <PermIdentityOutlinedIcon className="sm:scale-125 lg:scale-150 2xl:scale-[2] mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10" />
+            </Link>
+          )}
           <Link to="wishlist">
             <FavoriteBorderOutlinedIcon className="scale-75 sm:scale-100 lg:scale-125 2xl:scale-[1.75] ml-1 sm:ml-2 lg:ml-3.5 2xl:ml-10" />
           </Link>
         </div>
       </div>
-      <div className="fixed md:static z-50 bg-white top-12 w-full flex justify-center py-3 px-4">
+      <div className="fixed md:static z-40 bg-white top-12 w-full flex justify-center py-3 px-4">
         <div className="w-full flex md:hidden relative p-1 sm:p-2 bg-gray-100">
           <input
             type="text"
@@ -141,7 +163,7 @@ const Nav = () => {
           sidebar
         }
       >
-        <div className="w-full h-full bg-white shadow">
+        <div className="w-full h-full bg-white shadow overflow-scroll">
           <div className="bg-gray-200 p-3 border-b flex items-center justify-between">
             <button
               className="text-yellow-500"

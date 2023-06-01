@@ -77,10 +77,10 @@ const Signup = () => {
         <p className="flex md:text-lg">
           Password <span className="text-3xl text-red-600">*</span>
         </p>
-        <div className="flex">
+        <div className="flex items-center bg-gray-100">
           <input
             type={password ? "password" : "text"}
-            className="w-full bg-gray-100 text-md lg:text-lg p-3 outline-none mb-1"
+            className="w-full bg-transparent text-md lg:text-lg p-3 outline-none mb-1"
             name="password"
             id="password"
             value={values.password}
@@ -175,7 +175,7 @@ const Signup = () => {
           <p className="text-sm text-red-600">{errors.no}</p>
         ) : null}
 
-        <label className="flex my-6 md:my-0">
+        <label className="flex my-6">
           <input
             type="checkbox"
             name="checkbox"

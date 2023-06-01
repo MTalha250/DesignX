@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./SubComponents/Nav";
 import Footer from "./SubComponents/Footer";
@@ -8,9 +8,12 @@ import ItemPage from "./PageComponents/ItemPage";
 import Login from "./PageComponents/Login";
 import Signup from "./PageComponents/Signup";
 import Search from "./PageComponents/Search";
+import Account from "./PageComponents/Account";
 import { Toaster } from "react-hot-toast";
+import { UserContext } from "./Context/UserContext";
 
 function App() {
+  const [userData, setUserData] = useContext(UserContext);
   return (
     <div>
       <Router>
@@ -32,6 +35,7 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
               <Route path="search/:input" element={<Search />} />
+              {userData && <Route path="account" element={<Account />} />}
             </Route>
           </Routes>
         </div>

@@ -63,7 +63,7 @@ const Home = () => {
     <div>
       <Swiper
         modules={[Pagination, Autoplay]}
-        className="mySwiper h-[60vh] md:h-auto"
+        className="mySwiper"
         autoplay={true}
         pagination={{ clickable: true }}
       >
@@ -71,14 +71,24 @@ const Home = () => {
           <img
             src="https://interwood.pk/media/wysiwyg/SLIDER-WEB-MEGA-SALE.jpg"
             alt=""
-            className="w-full h-full object-cover"
+            className="hidden sm:block w-full h-full"
+          />
+          <img
+            src="https://interwood.pk/media/wysiwyg/SLIDER-MOB-Mega-sale.jpg"
+            alt=""
+            className="sm:hidden w-full h-full"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src="https://interwood.pk/media/wysiwyg/BUMPER-OFFERS-1920x740.jpg"
             alt=""
-            className="w-full h-full object-cover"
+            className="hidden sm:block w-full h-full"
+          />
+          <img
+            src="https://interwood.pk/media/wysiwyg/BUMPER-OFFERS-375-x-450.jpg"
+            alt=""
+            className="sm:hidden w-full h-full"
           />
         </SwiperSlide>
       </Swiper>
