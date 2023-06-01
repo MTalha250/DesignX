@@ -7,7 +7,7 @@ module.exports = {
     userModel
       .create(req.body)
       .then(() => {
-        res.send({ message: "Registered Successfully", alert: true });
+        res.send({ message: "Account created successfully", alert: true });
       })
       .catch((err) => {
         res.send({
@@ -36,12 +36,12 @@ module.exports = {
             token: token,
           };
           res.send({
-            message: "Logged In as " + userData.fname,
+            message: "Signed in as " + userData.fname,
             alert: true,
             userData: userData,
           });
         } else {
-          res.send({ message: "Incorrect Password", alert: false });
+          res.send({ message: "Incorrect password", alert: false });
         }
       } else {
         res.send({ message: "Email not found" });
@@ -57,7 +57,7 @@ module.exports = {
     userModel
       .findByIdAndDelete(req.params.id)
       .then(() => {
-        res.send({ message: "User Deleted" });
+        res.send({ message: "User deleted" });
       })
       .catch((err) => {
         res.send("Something went wrong!!!!" + err);
@@ -67,7 +67,7 @@ module.exports = {
     userModel
       .findByIdAndUpdate(req.params.id, req.body)
       .then(() => {
-        res.send({ message: "User Updated", alert: true });
+        res.send({ message: "User updated", alert: true });
       })
       .catch((err) => {
         res.send({ message: "Email already exists", alert: false });

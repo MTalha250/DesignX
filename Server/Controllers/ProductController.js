@@ -8,10 +8,10 @@ module.exports = {
         ...req.body,
       })
       .then(() => {
-        res.send({ message: "Item Inserted Successfully" });
+        res.send({ message: "Item inserted successfully" });
       })
       .catch((err) => {
-        res.send({ message: "Some Error Occurred" + err });
+        res.send({ message: "Some error occurred" + err });
       });
   },
   getAll: function (req, res) {
@@ -23,7 +23,7 @@ module.exports = {
     productModel
       .findByIdAndDelete(req.params.id)
       .then(() => {
-        res.send({ message: "Product Deleted" });
+        res.send({ message: "Product deleted" });
       })
       .catch((err) => {
         res.send("Something went wrong!!!!" + err);
@@ -36,7 +36,7 @@ module.exports = {
         ...req.body,
       })
       .then(() => {
-        res.send({ message: "Product Updated" });
+        res.send({ message: "Product updated" });
       })
       .catch((err) => {
         res.send({ message: "Something went wrong!!!!" + err });

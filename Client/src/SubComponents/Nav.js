@@ -13,6 +13,7 @@ import Categories from "./Categories";
 import { DataContext } from "../Context/DataContext";
 import { UserContext } from "../Context/UserContext";
 import Collapsible from "react-collapsible";
+import { toast } from "react-hot-toast";
 
 const Nav = () => {
   const [input, setInput] = useState("");
@@ -100,6 +101,7 @@ const Nav = () => {
                   onClick={() => {
                     setUserData("");
                     localStorage.removeItem("User");
+                    toast("Signed out successfully");
                   }}
                 >
                   Sign Out
