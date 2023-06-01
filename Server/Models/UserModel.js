@@ -10,7 +10,7 @@ var userSchema = new Schema({
   address: String,
   no: Number,
   type: String,
-  createdAt: String,
+  createdAt: Date,
 });
 
 userSchema.pre("save", function (next) {

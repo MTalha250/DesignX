@@ -67,7 +67,7 @@ function Login() {
             onBlur={handleBlur}
           />
           {errors.email && touched.email ? (
-            <p className=" text-sm text-red-600">{errors.email}</p>
+            <p className="text-sm text-red-600">{errors.email}</p>
           ) : null}
           <div className="w-full bg-gray-100 p-3 mt-8 flex">
             <input
