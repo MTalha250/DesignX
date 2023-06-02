@@ -11,6 +11,14 @@ var userSchema = new Schema({
   no: Number,
   type: String,
   createdAt: Date,
+  favorites: {
+    type: Array,
+    items: {
+      id: String,
+      img: String,
+      name: String,
+    },
+  },
 });
 
 userSchema.pre("save", function (next) {

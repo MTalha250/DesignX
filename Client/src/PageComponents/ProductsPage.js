@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { DataContext } from "../Context/DataContext";
 import Categories from "../SubComponents/Categories";
 import { Link } from "react-router-dom";
+import Item from "../SubComponents/Item";
 
 const ProductsPage = () => {
   const params = useParams();
@@ -96,6 +97,12 @@ const ProductsPage = () => {
               )}
           </div>
         ) : null}
+      </div>
+      <div className="grid grid-cols-3 gap-10 p-20">
+        <Item />
+        <Item />
+        <Item />
+        <Item />
       </div>
       {products.map((d) => (
         <p key={d._id}>{d.name}</p>

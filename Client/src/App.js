@@ -8,7 +8,10 @@ import ItemPage from "./PageComponents/ItemPage";
 import Login from "./PageComponents/Login";
 import Signup from "./PageComponents/Signup";
 import Search from "./PageComponents/Search";
-import Account from "./PageComponents/Account";
+import AccountPage from "./PageComponents/Account";
+import Account from "./SubComponents/Account/Account";
+import Wishlist from "./SubComponents/Account/Wishlist";
+import Admin from "./SubComponents/Account/Admin";
 import { Toaster } from "react-hot-toast";
 import { UserContext } from "./Context/UserContext";
 
@@ -35,7 +38,15 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
               <Route path="search/:input" element={<Search />} />
-              {userData && <Route path="account" element={<Account />} />}
+              {userData && (
+                <Route path="account" element={<AccountPage />}>
+                  <Route path="" element={<Account />} />
+                  <Route path="wishlist" element={<Wishlist />} />
+                  {userData.type === "admin" && (
+                    <Route path="admin" element={<Admin />} />
+                  )}
+                </Route>
+              )}
             </Route>
           </Routes>
         </div>

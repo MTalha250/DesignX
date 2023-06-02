@@ -90,7 +90,7 @@ const Nav = () => {
         </div>
         <div className="flex">
           {userData ? (
-            <button className="relative group sm:text-lg  font-semibold sm:font-bold">
+            <span className="cursor-default relative group sm:text-lg  font-semibold sm:font-bold">
               Hi,{userData.fname}
               <div className="p-2 hidden group-hover:block absolute bg-white shadow z-50">
                 <Link to="account" className="font-light border-b p-1">
@@ -107,13 +107,13 @@ const Nav = () => {
                   Sign Out
                 </button>
               </div>
-            </button>
+            </span>
           ) : (
             <Link to="login">
               <PermIdentityOutlinedIcon className="sm:scale-125 lg:scale-150 2xl:scale-[2] mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10" />
             </Link>
           )}
-          <Link to="wishlist">
+          <Link to={userData ? "account/wishlist" : "login"}>
             <FavoriteBorderOutlinedIcon className="scale-75 sm:scale-100 lg:scale-125 2xl:scale-[1.75] ml-1 sm:ml-2 lg:ml-3.5 2xl:ml-10" />
           </Link>
         </div>
