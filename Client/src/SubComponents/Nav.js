@@ -77,7 +77,7 @@ const Nav = () => {
             <SearchIcon className="scale-150" />
           </button>
           {input && (
-            <div className="w-full overflow-scroll absolute h-[50vh] bg-white top-full left-0 shadow">
+            <div className="z-40 w-full overflow-scroll absolute h-[50vh] bg-white top-full left-0 shadow">
               {data
                 ?.filter((d) => {
                   return d.name.toLowerCase().includes(input.toLowerCase());
@@ -253,7 +253,7 @@ const Nav = () => {
       </div>
       <div
         className={
-          "z-10 hidden md:flex w-full flex-wrap justify-center p-1 lg:p-2 bg-white border-b border-gray-300 " +
+          "z-50 hidden md:flex w-full flex-wrap justify-center p-1 lg:p-2 bg-white border-b border-gray-300 " +
           sticky
         }
       >

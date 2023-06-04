@@ -30,16 +30,27 @@ module.exports = {
       });
   },
   update: function (req, res) {
-    productModel
-      .findByIdAndUpdate(req.params.id, {
-        imgs: req.files.map((r) => r.path),
-        ...req.body,
-      })
-      .then(() => {
-        res.send({ message: "Product updated" });
-      })
-      .catch((err) => {
-        res.send({ message: "Something went wrong!!!!" + err });
-      });
+    if (req.files.length > 0) {
+      productModel
+        .findByIdAndUpdate(req.params.id, {
+          imgs: req.files.map((r) => r.path),
+          ...req.body,
+        })
+        .then(() => {
+          res.send({ message: "Product updated" });
+        })
+        .catch((err) => {
+          res.send({ message: "Something went wrong!!!!" + err });
+        });
+    } else {
+      productModel
+        .findByIdAndUpdate(req.params.id, req.body)
+        .then(() => {
+          res.send({ message: "Product updated" });
+        })
+        .catch((err) => {
+          res.send({ message: "Something went wrong!!!!" + err });
+        });
+    }
   },
 };

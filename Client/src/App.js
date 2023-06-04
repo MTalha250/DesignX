@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./SubComponents/Nav";
 import Footer from "./SubComponents/Footer";
@@ -12,11 +12,15 @@ import AccountPage from "./PageComponents/Account";
 import Account from "./SubComponents/Account/Account";
 import Wishlist from "./SubComponents/Account/Wishlist";
 import Admin from "./SubComponents/Account/Admin";
+import Users from "./SubComponents/Account/Admin/Users";
+import Products from "./SubComponents/Account/Admin/Products";
+import AddProduct from "./SubComponents/Account/Admin/AddProduct";
+import UpdateProduct from "./SubComponents/Account/Admin/UpdateProduct";
 import { Toaster } from "react-hot-toast";
 import { UserContext } from "./Context/UserContext";
-
 function App() {
   const [userData, setUserData] = useContext(UserContext);
+
   return (
     <div>
       <Router>
@@ -43,7 +47,15 @@ function App() {
                   <Route path="" element={<Account />} />
                   <Route path="wishlist" element={<Wishlist />} />
                   {userData.type === "admin" && (
-                    <Route path="admin" element={<Admin />} />
+                    <Route path="admin" element={<Admin />}>
+                      <Route path="users" element={<Users />} />
+                      <Route path="products" element={<Products />} />
+                      <Route path="addproduct" element={<AddProduct />} />
+                      <Route
+                        path="updateproduct/:id"
+                        element={<UpdateProduct />}
+                      />
+                    </Route>
                   )}
                 </Route>
               )}

@@ -36,9 +36,9 @@ const Categories = () => {
           type: array("Bedroom", "DECOR"),
         },
         {
-          name: "SEATING AND CHAIRS",
+          name: "SEATING & CHAIRS",
           img: "https://interwood.pk/media/catalog/categorymenu/Seating_Chairs.jpg",
-          type: array("Bedroom", "SEATING AND CHAIRS"),
+          type: array("Bedroom", "SEATING & CHAIRS"),
         },
       ],
     },

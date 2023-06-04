@@ -9,7 +9,7 @@ const Account = () => {
 
   return (
     <div>
-      <div className="bg-white fixed md:static top-[16%] md:block  p-2 md:p-4 w-full border-b">
+      <div className="z-40 bg-white fixed md:static top-[16%] md:block  p-2 md:p-4 w-full border-b">
         <Link
           to=""
           className={
@@ -34,7 +34,10 @@ const Account = () => {
           <Link
             to="admin"
             className={
-              location.pathname === "/account/admin"
+              location.pathname === "/account/admin" ||
+              location.pathname === "/account/admin/users" ||
+              location.pathname === "/account/admin/products" ||
+              location.pathname === "/account/admin/addproduct"
                 ? "md:text-lg text-yellow-500 mx-3 cursor-pointer font-bold relative before:absolute before:w-3 before:h-0.5 before:bg-yellow-500 before:top-full before:left-1/2 before:-translate-x-2/4"
                 : "md:text-lg text-black mx-3 cursor-pointer"
             }

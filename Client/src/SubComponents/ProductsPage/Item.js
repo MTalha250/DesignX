@@ -4,11 +4,13 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import RequestQuoteOutlinedIcon from "@mui/icons-material/RequestQuoteOutlined";
 import { Link, useNavigate } from "react-router-dom";
-import { UserContext } from "../Context/UserContext";
+import { UserContext } from "../../Context/UserContext";
+import Quote from "../../PageComponents/Quote";
 
 const Item = (props) => {
   const [img, setImg] = useState("0");
   const [div, setDiv] = useState("0");
+  const [quote, setQuote] = useState("hidden");
   const [favorite, setFavorite] = useState(false);
   const [userData, setUserData] = useContext(UserContext);
   const navigate = useNavigate();
@@ -16,12 +18,27 @@ const Item = (props) => {
     if (!userData) {
       navigate("/login");
     } else {
+      if (favorite) {
+        console.log("no");
+      } else {
+        console.log("yes");
+      }
       setFavorite((prev) => !prev);
     }
   };
 
+  const handleQuote = (value) => {
+    setQuote(value);
+  };
+
   return (
     <div>
+      <Quote
+        name={props.name}
+        id={props.id}
+        quote={quote}
+        handleQuote={handleQuote}
+      />
       <div
         className="relative"
         onMouseEnter={() => {
@@ -34,16 +51,13 @@ const Item = (props) => {
         }}
       >
         <Link to={`/product/${props.id}`}>
+          <img src={props.img1} alt="" className="w-full h-full" />
           <img
-            src="https://interwood.pk/media/catalog/product/cache/49d0b66e32578235461ce6eaf0ea6538/b/a/baroque_bed_brightness1.jpg"
-            alt=""
-            className="w-full"
-          />
-          <img
-            src="https://interwood.pk/media/catalog/product/b/a/baroque_bed_brightness2.jpg"
+            src={props.img2}
             alt=""
             className={
-              "top-0 absolute w-full transiton duration-300  opacity-" + img
+              "h-full top-0 absolute w-full transiton duration-300  opacity-" +
+              img
             }
           />
         </Link>
@@ -52,31 +66,46 @@ const Item = (props) => {
             "absolute bottom-0 right-0 flex flex-col p-2 opacity-" + div
           }
         >
-          <button className="my-1 bg-white transition duration-300 hover:bg-yellow-500 rounded">
-            <RequestQuoteOutlinedIcon className="m-2" />
+          <button
+            className="my-1 bg-white transition duration-300 hover:bg-yellow-500 rounded"
+            onClick={() => (userData ? setQuote("block") : navigate("/login"))}
+          >
+            <RequestQuoteOutlinedIcon className="m-1 lg:m-2" />
           </button>
           <button
             className="my-1 bg-white transition duration-300 hover:bg-yellow-500 rounded"
             onMouseEnter={() => setImg("0")}
             onMouseLeave={() => setImg("100")}
           >
-            <LoopIcon className="m-2" />
+            <LoopIcon className="m-1 lg:m-2" />
           </button>
           <button
             className="my-1 bg-white transition duration-300 hover:bg-yellow-500 rounded"
             onClick={handleFavorite}
           >
             {!favorite ? (
-              <FavoriteBorderOutlinedIcon className="m-2" />
+              <FavoriteBorderOutlinedIcon className="m-1 lg:m-2" />
             ) : (
-              <FavoriteIcon className="m-2" />
+              <FavoriteIcon className="m-1 lg:m-2" />
             )}
           </button>
         </div>
       </div>
-      <Link to={`/product/${props.id}`}>
-        <p className="text-lg my-2">Oliver Wardrobe 3 Doors</p>
-      </Link>
+      <div className="flex justify-between items-start my-2 lg:my-3">
+        <Link to={`/product/${props.id}`}>
+          <p className="lg:text-lg">{props.name}</p>
+        </Link>
+        <button onClick={handleFavorite} className="md:hidden">
+          {!favorite ? <FavoriteBorderOutlinedIcon /> : <FavoriteIcon />}
+        </button>
+      </div>
+
+      <button
+        className="py-2 px-3 lg:px-4 bg-yellow-500 text-white text-sm lg:text-base font-semibold lg:font-bold"
+        onClick={() => (userData ? setQuote("block") : navigate("/login"))}
+      >
+        Request A Quote
+      </button>
     </div>
   );
 };
