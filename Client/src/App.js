@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./SubComponents/Nav";
 import Footer from "./SubComponents/Footer";
 import Home from "./PageComponents/Home";
+import ErrorPage from "./PageComponents/ErrorPage";
 import ProductsPage from "./PageComponents/ProductsPage";
 import ItemPage from "./PageComponents/ItemPage";
 import Login from "./PageComponents/Login";
@@ -28,6 +29,7 @@ function App() {
         <div className="pt-28 md:pt-0">
           <Routes>
             <Route path="/">
+              <Route path="*" element={<ErrorPage />} />
               <Route index element={<Home />} />
               <Route path="products/:category" element={<ProductsPage />} />
               <Route
