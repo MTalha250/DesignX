@@ -165,14 +165,18 @@ const Reviews = ({ data }) => {
           </form>
         </Collapsible>
         <div className="sm:p-2 my-5">
-          {data?.reviews.map((d) => (
-            <div className="flex flex-col py-3 sm:p-2 md:p-3 border-b border-black">
-              <h2 className="font-bold">{d.name}</h2>
-              <Rating size="small" value={d.rating} readOnly />
-              <h3 className="font-semibold">{d.title}</h3>
-              <p>{d.review}</p>
-            </div>
-          ))}
+          {data?.reviews.length > 0 ? (
+            data?.reviews.map((d) => (
+              <div className="flex flex-col py-3 sm:p-2 md:p-3 border-b border-black">
+                <h2 className="font-bold">{d.name}</h2>
+                <Rating size="small" value={d.rating} readOnly />
+                <h3 className="font-semibold">{d.title}</h3>
+                <p>{d.review}</p>
+              </div>
+            ))
+          ) : (
+            <p className="text-center">No Reviews</p>
+          )}
         </div>
       </div>
     </div>

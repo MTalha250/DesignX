@@ -3,6 +3,7 @@ import Main from "../SubComponents/ItemPage/Main";
 import Reviews from "../SubComponents/ItemPage/Reviews";
 import { Link, useParams } from "react-router-dom";
 import { DataContext } from "../Context/DataContext";
+import Grid from "../SubComponents/ItemPage/Grid";
 const ItemPage = () => {
   const [data, setData] = useContext(DataContext);
   const params = useParams();
@@ -40,6 +41,7 @@ const ItemPage = () => {
       </div>
       <Main data={itemData} />
       <Reviews data={itemData} />
+      <Grid data={itemData} />
     </div>
   );
 };
