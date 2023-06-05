@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../Context/UserContext";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
 import { useFormik } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
@@ -34,7 +33,6 @@ const Account = () => {
           process.env.REACT_APP_PATH + `user/update/${userData.id}`,
           values
         );
-        toast(response.data.message);
         if (response.data.alert) {
           setUserData({
             ...userData,

@@ -34,6 +34,7 @@ module.exports = {
             no: userInfo.no,
             type: userInfo.type,
             token: token,
+            favorites: userInfo.favorites,
           };
           res.send({
             message: "Signed in as " + userData.fname,

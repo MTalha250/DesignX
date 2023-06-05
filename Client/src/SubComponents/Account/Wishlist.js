@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import FItem from "./FItem";
+import { UserContext } from "../../Context/UserContext";
 
 const Wishlist = () => {
-  return <div>Wishlist</div>;
+  const [userData, setUserData] = useContext(UserContext);
+  return (
+    <div className="min-h-screen px-5 md:px-10 lg:px-20 w-full flex flex-col items-center">
+      <h1 className="my-5 font-bold text-3xl lg:text-4xl">Favorites List</h1>
+      <div className="w-full shadow border min-h-[30vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10 p-5 sm:p-8">
+        {userData?.favorites?.map((f) => (
+          <FItem img={f.img} name={f.name} id={f.id} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Wishlist;

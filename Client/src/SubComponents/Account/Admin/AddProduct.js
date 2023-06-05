@@ -124,8 +124,8 @@ const AddProduct = () => {
         <label htmlFor="description" className="font-bold  mt-3">
           Description :
         </label>
-        <input
-          type="text"
+        <textarea
+          rows={5}
           name="description"
           id="description"
           className="w-full bg-gray-100 text-sm md:text-base p-2 outline-none mb-1"

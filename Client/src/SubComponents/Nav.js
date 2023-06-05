@@ -14,6 +14,7 @@ import { DataContext } from "../Context/DataContext";
 import { UserContext } from "../Context/UserContext";
 import Collapsible from "react-collapsible";
 import { toast } from "react-hot-toast";
+import SItem from "./Search/SItem";
 
 const Nav = () => {
   const [input, setInput] = useState("");
@@ -83,7 +84,10 @@ const Nav = () => {
                   return d.name.toLowerCase().includes(input.toLowerCase());
                 })
                 .map((d) => (
-                  <p>{d.name}</p>
+                  <SItem
+                    img={process.env.REACT_APP_PATH + d.imgs[0]}
+                    name={d.name}
+                  />
                 ))}
             </div>
           )}
@@ -153,7 +157,10 @@ const Nav = () => {
                   return d.name.toLowerCase().includes(input.toLowerCase());
                 })
                 .map((d) => (
-                  <p>{d.name}</p>
+                  <SItem
+                    img={process.env.REACT_APP_PATH + d.imgs[0]}
+                    name={d.name}
+                  />
                 ))}
             </div>
           )}

@@ -20,7 +20,7 @@ const Item = (props) => {
     <div>
       <Link to={`/product/${props.id}`}>
         <img src={props.img} alt="" className="w-full" />
-        <p className="my-2 lg:my-3 lg:text-lg">{props.name}</p>
+        <p className="my-2 lg:my-3 lg:text-lg truncate">{props.name}</p>
       </Link>
       <div className="w-full flex justify-between">
         <Link
