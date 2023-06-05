@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import Main from "../SubComponents/ItemPage/Main";
+import Reviews from "../SubComponents/ItemPage/Reviews";
 import { Link, useParams } from "react-router-dom";
 import { DataContext } from "../Context/DataContext";
 const ItemPage = () => {
@@ -38,6 +39,7 @@ const ItemPage = () => {
         /<span className="mx-2">{itemData?.name}</span>
       </div>
       <Main data={itemData} />
+      <Reviews data={itemData} />
     </div>
   );
 };

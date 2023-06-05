@@ -53,4 +53,14 @@ module.exports = {
         });
     }
   },
+  reviews: function (req, res) {
+    productModel
+      .findByIdAndUpdate(req.params.id, req.body)
+      .then(() => {
+        res.send({ message: "Review submitted" });
+      })
+      .catch((err) => {
+        res.send({ message: "Something went wrong!!!!" + err });
+      });
+  },
 };

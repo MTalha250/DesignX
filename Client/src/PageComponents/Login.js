@@ -41,7 +41,7 @@ function Login() {
         if (response.data.alert) {
           setUserData(response.data.userData);
           localStorage.setItem("User", JSON.stringify(response.data.userData));
-          navigate("/");
+          navigate(-1);
         }
       },
     });

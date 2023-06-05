@@ -46,7 +46,7 @@ const Main = ({ data }) => {
           <img
             src={process.env.REACT_APP_PATH + d}
             alt=""
-            className="border snap-start snap-always"
+            className="cursor-pointer my-1 border snap-start snap-always"
             onClick={() => setImg(d)}
           />
         ))}

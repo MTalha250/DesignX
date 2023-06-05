@@ -13,8 +13,10 @@ var productSchema = new Schema({
   reviews: {
     type: Array,
     items: {
-      rating: Number,
       name: String,
+      email: String,
+      rating: Number,
+      title: String,
       review: String,
     },
   },
