@@ -18,6 +18,7 @@ var productSchema = new Schema({
       rating: Number,
       title: String,
       review: String,
+      created_at: Date,
     },
   },
 });

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/UserContext";
 import { DataContext } from "../../Context/DataContext";
 import { toast } from "react-hot-toast";
+import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 
 const Reviews = ({ data }) => {
@@ -49,6 +50,7 @@ const Reviews = ({ data }) => {
               name: userData?.fname,
               email: userData?.email,
               ...review,
+              created_at: new Date(),
             },
           ],
         }
@@ -68,6 +70,19 @@ const Reviews = ({ data }) => {
     }
   };
 
+  const handleDelete = async (index) => {
+    data.reviews.splice(index, 1);
+    const response = await axios.put(
+      process.env.REACT_APP_PATH + `product/reviews/${data._id}`,
+      {
+        reviews: data.reviews,
+      }
+    );
+    const getData = await axios.get(
+      process.env.REACT_APP_PATH + "product/products"
+    );
+    setAllData(getData.data);
+  };
   function getLabelText(value) {
     return `${review.rating} Star${review.rating !== 1 ? "s" : ""}, ${
       labels[review.rating]
@@ -166,16 +181,36 @@ const Reviews = ({ data }) => {
         </Collapsible>
         <div className="sm:p-2 my-5">
           {data?.reviews.length > 0 ? (
-            data?.reviews.map((d) => (
-              <div className="flex flex-col py-3 sm:p-2 md:p-3 border-b border-black">
-                <h2 className="font-bold">{d.name}</h2>
-                <Rating size="small" value={d.rating} readOnly />
-                <h3 className="font-semibold">{d.title}</h3>
-                <p>{d.review}</p>
+            data?.reviews.map((d, i) => (
+              <div className="w-full border-b border-black py-3 group flex">
+                <span className="shrink-0 text-center leading-10 font-bold text-white h-10 w-10 bg-yellow-500 rounded-full mr-2">
+                  {d.name.slice(0, 1)}
+                </span>
+                <div className="flex flex-col  ">
+                  <h2 className="flex justify-between font-bold text-yellow-600">
+                    {d.name}
+                  </h2>
+                  <Rating size="small" value={d.rating} readOnly />
+                  <h3 className="font-semibold">{d.title}</h3>
+                  <p>{d.review}</p>
+                </div>
+                <div className="flex flex-col justify-between items-end ml-auto">
+                  <p className="text-gray-500 text-sm">26/03/23</p>
+                  {d.email === userData?.email && (
+                    <button
+                      className="invisible group-hover:visible"
+                      onClick={() => handleDelete(i)}
+                    >
+                      <DeleteIcon />
+                    </button>
+                  )}
+                </div>
               </div>
             ))
           ) : (
-            <p className="text-center">No Reviews</p>
+            <p className="text-center text-gray-500">
+              BE THE FIRST TO WRITE A REVIEW
+            </p>
           )}
         </div>
       </div>

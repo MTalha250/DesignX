@@ -11,7 +11,7 @@ const ItemPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [itemData]);
+  }, [params.id]);
 
   return (
     <div>
