@@ -7,11 +7,17 @@ const Wishlist = () => {
   return (
     <div className="min-h-screen px-5 md:px-10 lg:px-20 w-full flex flex-col items-center">
       <h1 className="my-5 font-bold text-3xl lg:text-4xl">Favorites List</h1>
-      <div className="w-full shadow border min-h-[30vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10 p-5 sm:p-8">
-        {userData?.favorites?.map((f) => (
-          <FItem img={f.img} name={f.name} id={f.id} />
-        ))}
-      </div>
+      {userData?.favorites.length > 0 ? (
+        <div className="w-full shadow border min-h-[30vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10 p-5 sm:p-8">
+          {userData?.favorites.map((f) => (
+            <FItem img={f.img} name={f.name} id={f.id} />
+          ))}
+        </div>
+      ) : (
+        <p className="text-gray-500 my-10 text-4xl text-center font-extralight tracking-widest">
+          Empty
+        </p>
+      )}
     </div>
   );
 };

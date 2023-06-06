@@ -14,7 +14,12 @@ const Item = (props) => {
   const [quote, setQuote] = useState("hidden");
   const [userData, setUserData] = useContext(UserContext);
   const navigate = useNavigate();
-  const [check, setCheck] = useState(userData?.favorites?.map((f) => f.id));
+  const [check, setCheck] = useState([]);
+  useEffect(() => {
+    if (userData) {
+      setCheck(userData?.favorites?.map((f) => f.id));
+    }
+  }, []);
 
   const handleFavorite = async () => {
     if (!userData) {
