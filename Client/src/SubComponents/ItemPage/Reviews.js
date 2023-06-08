@@ -90,7 +90,7 @@ const Reviews = ({ data }) => {
   }
   return (
     <div className="my-10 w-full flex justify-center items-center">
-      <div className="p-6 sm:p-10 w-[95%] sm:w-[90%] border border-gray-500 min-h-[30vh]">
+      <div className="py-6 px-3 sm:p-10 w-[95%] sm:w-[90%] border border-gray-500 min-h-[30vh]">
         <Collapsible
           transitionTime={300}
           trigger={
@@ -183,29 +183,29 @@ const Reviews = ({ data }) => {
           {data?.reviews.length > 0 ? (
             data?.reviews.map((d, i) => (
               <div className="w-full border-b border-black py-3 group flex">
-                <span className="shrink-0 text-center leading-10 font-bold text-white h-10 w-10 bg-yellow-500 rounded-full mr-2">
+                <span className="shrink-0 text-center leading-10 font-bold text-white h-10 w-10 bg-yellow-500 rounded-full mr-1">
                   {d.name.slice(0, 1)}
                 </span>
-                <div className="flex flex-col  ">
+                <div className="flex flex-col">
                   <h2 className="flex justify-between font-bold text-yellow-600">
-                    {d.name}
+                    <span>{d.name}</span>
+                    <span className="text-gray-500 text-xs">
+                      {d.created_at.slice(0, 10)}
+                    </span>
                   </h2>
-                  <Rating size="small" value={d.rating} readOnly />
+                  <div className="items-center w-full flex justify-between">
+                    <Rating size="small" value={d.rating} readOnly />
+                    {d.email === userData?.email && (
+                      <button
+                        className="text-gray-500 invisible group-hover:visible"
+                        onClick={() => handleDelete(i)}
+                      >
+                        <DeleteIcon />
+                      </button>
+                    )}
+                  </div>
                   <h3 className="font-semibold">{d.title}</h3>
-                  <p>{d.review}</p>
-                </div>
-                <div className="flex flex-col justify-between items-end ml-auto">
-                  <p className="text-gray-500 text-sm">
-                    {d.created_at.slice(0, 10)}
-                  </p>
-                  {d.email === userData?.email && (
-                    <button
-                      className="invisible group-hover:visible"
-                      onClick={() => handleDelete(i)}
-                    >
-                      <DeleteIcon />
-                    </button>
-                  )}
+                  <p className="font-light text-sm">{d.review}</p>
                 </div>
               </div>
             ))
