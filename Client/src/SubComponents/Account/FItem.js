@@ -31,7 +31,7 @@ const FItem = (props) => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-white p-3">
       <Quote
         name={props.name}
         id={props.id}
