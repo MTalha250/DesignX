@@ -83,14 +83,10 @@ const Reviews = ({ data }) => {
     );
     setAllData(getData.data);
   };
-  function getLabelText(value) {
-    return `${review.rating} Star${review.rating !== 1 ? "s" : ""}, ${
-      labels[review.rating]
-    }`;
-  }
+
   return (
     <div className="mb-10 w-full flex justify-center items-center">
-      <div className="py-6 px-3 sm:p-10 w-[95%] sm:w-[90%] border border-gray-500 min-h-[30vh]">
+      <div className="py-6 px-3 md:p-10 w-full md:w-[90%] border border-gray-500 min-h-[30vh]">
         <Collapsible
           transitionTime={300}
           trigger={
@@ -186,7 +182,7 @@ const Reviews = ({ data }) => {
                 <span className="shrink-0 text-center leading-10 font-bold text-white h-10 w-10 bg-yellow-500 rounded-full mr-1">
                   {d.name.slice(0, 1)}
                 </span>
-                <div className="flex flex-col">
+                <div className="w-full flex flex-col">
                   <h2 className="flex justify-between font-bold text-yellow-600">
                     <span>{d.name}</span>
                     <span className="text-gray-500 text-xs">
