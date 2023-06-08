@@ -83,7 +83,7 @@ const Main = ({ data }) => {
         </p>
         <button
           className="my-5 py-3 w-1/2 bg-yellow-500 text-white text-base lg:text-lg font-semibold lg:font-bold"
-          onClick={() => (userData ? setQuote("block") : navigate("/login"))}
+          onClick={() => setQuote("block")}
         >
           Request A Quote
         </button>

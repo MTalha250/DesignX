@@ -114,7 +114,7 @@ const Item = (props) => {
         >
           <button
             className="my-1 bg-white transition duration-300 hover:bg-yellow-500 rounded"
-            onClick={() => (userData ? setQuote("block") : navigate("/login"))}
+            onClick={() => setQuote("block")}
           >
             <RequestQuoteOutlinedIcon className="m-1 lg:m-2" />
           </button>
@@ -152,7 +152,7 @@ const Item = (props) => {
 
       <button
         className="py-2 px-3 lg:px-4 bg-yellow-500 text-white text-sm lg:text-base font-semibold lg:font-bold"
-        onClick={() => (userData ? setQuote("block") : navigate("/login"))}
+        onClick={() => setQuote("block")}
       >
         Request A Quote
       </button>

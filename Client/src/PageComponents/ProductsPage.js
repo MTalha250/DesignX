@@ -69,7 +69,7 @@ const ProductsPage = () => {
                       <Link
                         key={t}
                         to={`${t}`}
-                        className="shrink-0 px-5 md:px-10 py-3 md:py-2 text-sm md:text-lg"
+                        className="font-semibold shrink-0 px-5 md:px-10 py-3 md:py-2 text-sm md:text-lg"
                       >
                         {t}
                       </Link>
