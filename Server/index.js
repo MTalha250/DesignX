@@ -13,6 +13,9 @@ app.get("/", (req, res) => {
   res.send("Server is Running");
 });
 
+const homeRoute = require("./Routes/HomeRouter");
+app.use("/home", homeRoute);
+
 const userRoute = require("./Routes/UserRouter");
 app.use("/user", userRoute);
 
