@@ -89,7 +89,7 @@ const Reviews = ({ data }) => {
     }`;
   }
   return (
-    <div className="my-10 w-full flex justify-center items-center">
+    <div className="mb-10 w-full flex justify-center items-center">
       <div className="py-6 px-3 sm:p-10 w-[95%] sm:w-[90%] border border-gray-500 min-h-[30vh]">
         <Collapsible
           transitionTime={300}

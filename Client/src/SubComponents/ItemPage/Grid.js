@@ -28,7 +28,9 @@ const Grid = ({ data }) => {
 
   return (
     <div className="my-5 px-5 sm:px-8 lg:p-20">
-      <h1 className="my-5 font-bold text-xl">You may also like :</h1>
+      <h1 className="my-5 font-semibold text-2xl">
+        Products similar to this item
+      </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-5 lg:gap-10">
         {products
           ?.filter((d) => {
