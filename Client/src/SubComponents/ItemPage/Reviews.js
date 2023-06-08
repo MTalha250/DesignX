@@ -15,8 +15,8 @@ const Reviews = ({ data }) => {
   const [userData, setUserData] = useContext(UserContext);
   const [AllData, setAllData] = useContext(DataContext);
   const [review, setReview] = useState({
-    title: "",
     rating: "",
+    title: "",
     review: "",
   });
   const navigate = useNavigate();
@@ -195,7 +195,9 @@ const Reviews = ({ data }) => {
                   <p>{d.review}</p>
                 </div>
                 <div className="flex flex-col justify-between items-end ml-auto">
-                  <p className="text-gray-500 text-sm">26/03/23</p>
+                  <p className="text-gray-500 text-sm">
+                    {d.created_at.slice(0, 10)}
+                  </p>
                   {d.email === userData?.email && (
                     <button
                       className="invisible group-hover:visible"
