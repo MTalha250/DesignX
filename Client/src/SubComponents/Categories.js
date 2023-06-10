@@ -30,11 +30,11 @@ const Categories = () => {
           img: "https://interwood.pk/media/catalog/categorymenu/Bedroom_Storage_Tab_Thumbnail.jpg",
           type: array("Bedroom", "STORAGE"),
         },
-        {
-          name: "DECOR",
-          img: "https://interwood.pk/media/catalog/categorymenu/Accessories.jpg",
-          type: array("Bedroom", "DECOR"),
-        },
+        // {
+        //   name: "DECOR",
+        //   img: "https://interwood.pk/media/catalog/categorymenu/Accessories.jpg",
+        //   type: array("Bedroom", "DECOR"),
+        // },
         {
           name: "SEATING & CHAIRS",
           img: "https://interwood.pk/media/catalog/categorymenu/Seating_Chairs.jpg",
@@ -57,12 +57,12 @@ const Categories = () => {
 
           type: array("Living", "SOFA BED"),
         },
-        {
-          name: "RECLINERS",
-          img: "https://interwood.pk/media/catalog/categorymenu/Recliners.jpg",
+        // {
+        //   name: "RECLINERS",
+        //   img: "https://interwood.pk/media/catalog/categorymenu/Recliners.jpg",
 
-          type: array("Living", "RECLINERS"),
-        },
+        //   type: array("Living", "RECLINERS"),
+        // },
         {
           name: "CHAIRS",
           img: "https://interwood.pk/media/catalog/categorymenu/Chairs.jpg",
@@ -78,11 +78,11 @@ const Categories = () => {
           img: "https://interwood.pk/media/catalog/categorymenu/Storage_KIDS_.jpg",
           type: array("Living", "STORAGE"),
         },
-        {
-          name: "FLOORING",
-          img: "https://interwood.pk/media/catalog/categorymenu/Flooring_1.jpg",
-          type: array("Living", "FLOORING"),
-        },
+        // {
+        //   name: "FLOORING",
+        //   img: "https://interwood.pk/media/catalog/categorymenu/Flooring_1.jpg",
+        //   type: array("Living", "FLOORING"),
+        // },
       ],
     },
     {
@@ -142,26 +142,26 @@ const Categories = () => {
           img: "https://interwood.pk/media/catalog/categorymenu/Office_Tables.jpg",
           type: array("Office", "OFFICE TABLES"),
         },
-        {
-          name: "OFFICE CHAIRS",
-          img: "https://interwood.pk/media/catalog/categorymenu/Office_Chairs.jpg",
-          type: array("Office", "OFFICE CHAIRS"),
-        },
-        {
-          name: "WORKSTATIONS",
-          img: "https://interwood.pk/media/catalog/categorymenu/Workstations.jpg",
-          type: array("Office", "WORKSTATIONS"),
-        },
+        // {
+        //   name: "OFFICE CHAIRS",
+        //   img: "https://interwood.pk/media/catalog/categorymenu/Office_Chairs.jpg",
+        //   type: array("Office", "OFFICE CHAIRS"),
+        // },
+        // {
+        //   name: "WORKSTATIONS",
+        //   img: "https://interwood.pk/media/catalog/categorymenu/Workstations.jpg",
+        //   type: array("Office", "WORKSTATIONS"),
+        // },
         {
           name: "SEATING",
           img: "https://interwood.pk/media/catalog/categorymenu/Office_Furniture.jpg",
           type: array("Office", "SEATING"),
         },
-        {
-          name: "CO-WORKING SPACES",
-          img: "https://interwood.pk/media/catalog/categorymenu/CO_-_WORKING_Spaces.jpg",
-          type: array("Office", "CO-WORKING SPACES"),
-        },
+        // {
+        //   name: "CO-WORKING SPACES",
+        //   img: "https://interwood.pk/media/catalog/categorymenu/CO_-_WORKING_Spaces.jpg",
+        //   type: array("Office", "CO-WORKING SPACES"),
+        // },
         {
           name: "OFFICE EXECUTIVE FURNITURE SETS",
           img: "https://interwood.pk/media/catalog/categorymenu/Office_Ecxecutive_Furniture_Sets_2.jpg",
@@ -183,64 +183,64 @@ const Categories = () => {
           img: "https://interwood.pk/media/catalog/categorymenu/Kitchen_Designs.jpg",
           type: array("Kitchens", "KITCHEN DESIGNS"),
         },
-        {
-          name: "KITCHEN ACCESSORIES",
-          img: "https://interwood.pk/media/catalog/categorymenu/Kitchen_Appliances.jpg",
-          type: array("Kitchens", "KITCHEN ACCESSORIES"),
-        },
-        {
-          name: "KITCHEN APPLIANCES",
-          img: "https://interwood.pk/media/catalog/categorymenu/Kitchen_Accessories.jpg",
-          type: array("Kitchens", "KITCHEN APPLIANCES"),
-        },
+        // {
+        //   name: "KITCHEN ACCESSORIES",
+        //   img: "https://interwood.pk/media/catalog/categorymenu/Kitchen_Appliances.jpg",
+        //   type: array("Kitchens", "KITCHEN ACCESSORIES"),
+        // },
+        // {
+        //   name: "KITCHEN APPLIANCES",
+        //   img: "https://interwood.pk/media/catalog/categorymenu/Kitchen_Accessories.jpg",
+        //   type: array("Kitchens", "KITCHEN APPLIANCES"),
+        // },
       ],
     },
-    {
-      name: "Doors",
-      img: "https://interwood.pk/media/catalog/categorymenu/door_designs_in_Pakistan_1.jpg",
-      subCategories: [
-        {
-          name: "MAIN DOORS",
-          img: "https://interwood.pk/media/catalog/categorymenu/Main_Doors.jpg",
-          type: array("Doors", "MAIN DOORS"),
-        },
-        {
-          name: "PANEL DOORS",
-          img: "https://interwood.pk/media/catalog/categorymenu/Panel_Doors.jpg",
-          type: array("Doors", "PANEL DOORS"),
-        },
-        {
-          name: "GLASS DOOR",
-          img: "https://interwood.pk/media/catalog/categorymenu/Glass_Door.jpg",
-          type: array("Doors", "GLASS DOOR"),
-        },
-        {
-          name: "VENEER DOOR",
-          img: "https://interwood.pk/media/catalog/categorymenu/Veneer_Door.jpg",
-          type: array("Doors", "VENEER DOOR"),
-        },
-        {
-          name: "THERMOSET DOORS",
-          img: "https://interwood.pk/media/catalog/categorymenu/Thermoset_Doors.jpg",
-          type: array("Doors", "THERMOSET DOORS"),
-        },
-        {
-          name: "PAINTED DOOR",
-          img: "https://interwood.pk/media/catalog/categorymenu/Painted_Door.jpg",
-          type: array("Doors", "PAINTED DOOR"),
-        },
-        {
-          name: "LAMINATED DOOR",
-          img: "https://interwood.pk/media/catalog/categorymenu/Laminated_Door.jpg",
-          type: array("Doors", "LAMINATED DOOR"),
-        },
-        {
-          name: "SLIDING DOOR",
-          img: "https://interwood.pk/media/catalog/categorymenu/Sliding_Door.jpg",
-          type: array("Doors", "SLIDING DOOR"),
-        },
-      ],
-    },
+    // {
+    //   name: "Doors",
+    //   img: "https://interwood.pk/media/catalog/categorymenu/door_designs_in_Pakistan_1.jpg",
+    //   subCategories: [
+    //     {
+    //       name: "MAIN DOORS",
+    //       img: "https://interwood.pk/media/catalog/categorymenu/Main_Doors.jpg",
+    //       type: array("Doors", "MAIN DOORS"),
+    //     },
+    //     {
+    //       name: "PANEL DOORS",
+    //       img: "https://interwood.pk/media/catalog/categorymenu/Panel_Doors.jpg",
+    //       type: array("Doors", "PANEL DOORS"),
+    //     },
+    //     {
+    //       name: "GLASS DOOR",
+    //       img: "https://interwood.pk/media/catalog/categorymenu/Glass_Door.jpg",
+    //       type: array("Doors", "GLASS DOOR"),
+    //     },
+    //     {
+    //       name: "VENEER DOOR",
+    //       img: "https://interwood.pk/media/catalog/categorymenu/Veneer_Door.jpg",
+    //       type: array("Doors", "VENEER DOOR"),
+    //     },
+    //     {
+    //       name: "THERMOSET DOORS",
+    //       img: "https://interwood.pk/media/catalog/categorymenu/Thermoset_Doors.jpg",
+    //       type: array("Doors", "THERMOSET DOORS"),
+    //     },
+    //     {
+    //       name: "PAINTED DOOR",
+    //       img: "https://interwood.pk/media/catalog/categorymenu/Painted_Door.jpg",
+    //       type: array("Doors", "PAINTED DOOR"),
+    //     },
+    //     {
+    //       name: "LAMINATED DOOR",
+    //       img: "https://interwood.pk/media/catalog/categorymenu/Laminated_Door.jpg",
+    //       type: array("Doors", "LAMINATED DOOR"),
+    //     },
+    //     {
+    //       name: "SLIDING DOOR",
+    //       img: "https://interwood.pk/media/catalog/categorymenu/Sliding_Door.jpg",
+    //       type: array("Doors", "SLIDING DOOR"),
+    //     },
+    //   ],
+    // },
     {
       name: "Wardrobes",
       img: "https://interwood.pk/media/catalog/categorymenu/wardrobe_design_2.jpg",

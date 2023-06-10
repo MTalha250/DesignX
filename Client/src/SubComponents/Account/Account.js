@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
+import toast from "react-hot-toast";
 const updateSchema = Yup.object({
   fname: Yup.string().min(2).max(20).required("Please Enter Your First Name"),
   lname: Yup.string().min(2).max(20).required("Please Enter Your Last Name"),
@@ -33,6 +34,7 @@ const Account = () => {
           process.env.REACT_APP_PATH + `user/update/${userData.id}`,
           values
         );
+        toast(response.data.message);
         if (response.data.alert) {
           setUserData({
             ...userData,
