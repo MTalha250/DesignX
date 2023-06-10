@@ -259,7 +259,7 @@ const Nav = ({ logo }) => {
           ))}
         </div>
         <div
-          className="hidden sm:block w-full h-full"
+          className="w-1/3 sm:w-full h-full"
           onClick={() => setSidebar("scale-x-0")}
         ></div>
       </div>
