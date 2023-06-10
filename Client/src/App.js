@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./SubComponents/Nav";
 import Footer from "./SubComponents/Footer";
@@ -19,18 +19,35 @@ import AddProduct from "./SubComponents/Account/Admin/AddProduct";
 import UpdateProduct from "./SubComponents/Account/Admin/UpdateProduct";
 import { Toaster } from "react-hot-toast";
 import { UserContext } from "./Context/UserContext";
+import axios from "axios";
 function App() {
   const [userData, setUserData] = useContext(UserContext);
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get(process.env.REACT_APP_PATH + "home/get");
+      setData(response.data);
+    };
+    getData();
+  });
 
   return (
     <div>
       <Router>
-        <Nav />
+        <Nav
+          logo={
+            data.filter((d) => {
+              return d.category === "logo";
+            })[0]
+          }
+        />
         <div className="pt-28 md:pt-0">
           <Routes>
             <Route path="/">
               <Route path="*" element={<ErrorPage />} />
-              <Route index element={<Home />} />
+              <Route index element={<Home data={data} />} />
               <Route path="products/:category" element={<ProductsPage />} />
               <Route
                 path="products/:category/:sub_category"

@@ -14,8 +14,8 @@ const Account = () => {
           to=""
           className={
             location.pathname === "/account"
-              ? "md:text-lg text-yellow-500 mx-3 cursor-pointer font-bold relative before:absolute before:w-3 before:h-0.5 before:bg-yellow-500 before:top-full before:left-1/2 before:-translate-x-2/4"
-              : "md:text-lg text-black mx-3 cursor-pointer"
+              ? "text-yellow-500 mx-3 cursor-pointer font-bold relative before:absolute before:w-3 before:h-0.5 before:bg-yellow-500 before:top-full before:left-1/2 before:-translate-x-2/4"
+              : "text-black mx-3 cursor-pointer"
           }
         >
           Account
@@ -24,8 +24,8 @@ const Account = () => {
           to="wishlist"
           className={
             location.pathname === "/account/wishlist"
-              ? "md:text-lg text-yellow-500 mx-3 cursor-pointer font-bold relative before:absolute before:w-3 before:h-0.5 before:bg-yellow-500 before:top-full before:left-1/2 before:-translate-x-2/4"
-              : "md:text-lg text-black mx-3 cursor-pointer"
+              ? "text-yellow-500 mx-3 cursor-pointer font-bold relative before:absolute before:w-3 before:h-0.5 before:bg-yellow-500 before:top-full before:left-1/2 before:-translate-x-2/4"
+              : "text-black mx-3 cursor-pointer"
           }
         >
           Wishlist
@@ -38,8 +38,8 @@ const Account = () => {
               location.pathname === "/account/admin/users" ||
               location.pathname === "/account/admin/products" ||
               location.pathname === "/account/admin/addproduct"
-                ? "md:text-lg text-yellow-500 mx-3 cursor-pointer font-bold relative before:absolute before:w-3 before:h-0.5 before:bg-yellow-500 before:top-full before:left-1/2 before:-translate-x-2/4"
-                : "md:text-lg text-black mx-3 cursor-pointer"
+                ? "text-yellow-500 mx-3 cursor-pointer font-bold relative before:absolute before:w-3 before:h-0.5 before:bg-yellow-500 before:top-full before:left-1/2 before:-translate-x-2/4"
+                : "text-black mx-3 cursor-pointer"
             }
           >
             Admin

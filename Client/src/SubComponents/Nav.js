@@ -7,7 +7,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import logo from "../logo.jpg";
+// import logo from "../logo.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import Categories from "./Categories";
 import { DataContext } from "../Context/DataContext";
@@ -16,7 +16,7 @@ import Collapsible from "react-collapsible";
 import { toast } from "react-hot-toast";
 import SItem from "./Search/SItem";
 
-const Nav = () => {
+const Nav = ({ logo }) => {
   const [input, setInput] = useState("");
   const [sidebar, setSidebar] = useState("scale-x-0");
   const [data, setData] = useContext(DataContext);
@@ -31,6 +31,7 @@ const Nav = () => {
       setSticky("");
     }
   };
+  // console.log(logo);
 
   return (
     <div>
@@ -47,8 +48,12 @@ const Nav = () => {
             <LocalPhoneIcon />
           </a>
         </div>
-        <Link to="/">
-          <img src={logo} alt="" className="w-28 lg:w-32 2xl:w-44" />
+        <Link to={logo?.link}>
+          <img
+            src={process.env.REACT_APP_PATH + logo?.img}
+            alt={logo?.name}
+            className="w-28 lg:w-32 2xl:w-44"
+          />
         </Link>
         <div className="hidden md:flex relative w-1/2 p-2 lg:p-3 2xl:p-4 bg-gray-100">
           <input

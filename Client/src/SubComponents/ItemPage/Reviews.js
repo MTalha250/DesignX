@@ -206,7 +206,7 @@ const Reviews = ({ data }) => {
               </div>
             ))
           ) : (
-            <p className="text-center text-gray-500">
+            <p className="text-sm text-center text-gray-500">
               BE THE FIRST TO WRITE A REVIEW
             </p>
           )}

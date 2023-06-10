@@ -1,22 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper";
-import axios from "axios";
 
-const Home = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      const response = await axios.get(process.env.REACT_APP_PATH + "home/get");
-      setData(response.data);
-    };
-    getData();
-  });
-
+const Home = ({ data }) => {
   return (
     <div>
       <Swiper
@@ -58,7 +47,7 @@ const Home = () => {
       </h1>
       <div className="grid grid-cols-4 lg:grid-cols-5 md:gap-3 my-5 px-2 md:px-20 lg:px-44 2xl:px-96">
         {data
-          .filter((d) => {
+          ?.filter((d) => {
             return d.category === "categories";
           })
           .map((d) => (
