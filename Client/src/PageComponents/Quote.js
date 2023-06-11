@@ -2,6 +2,8 @@ import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import ReactWhatsapp from "react-whatsapp";
+import { render } from "react-dom";
 
 const quoteSchema = Yup.object({
   name: Yup.string().min(2).max(20).required("Please Enter Your First Name"),
@@ -22,11 +24,11 @@ const Quote = (props) => {
       initialValues: initialValues,
       validationSchema: quoteSchema,
       onSubmit: async (values, action) => {
-        console.log({
-          props,
-          ...values,
-        });
-        action.resetForm();
+        let url = `https://web.whatsapp.com/send?phone=${+923244264800}&text=${encodeURI(
+          `Name: ${values.name} \nEmail: ${values.email} \nCity: ${values.city} \nNumber: ${values.no} \nMessage: ${values.message} \nProduct Name: ${props.name} \nProduct Id: ${props.id}`
+        )}&app_absent=0`;
+        window.open(url);
+        // action.resetForm();
       },
     });
 
