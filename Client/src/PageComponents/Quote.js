@@ -37,13 +37,15 @@ const Quote = (props) => {
         props.quote
       }
     >
-      <div className="w-full h-full sm:h-auto sm:w-3/4 md:w-2/3 lg:w-1/2 overflow-scroll bg-white">
-        <div className="text-lg font-bold p-5 flex justify-between border-b">
-          <span>Request A Quote</span>
-          <CloseIcon
-            className="cursor-pointer"
+      <div className="w-5/6 sm:w-3/4 md:w-2/3 lg:w-1/2 overflow-scroll bg-white">
+        <div className="text-lg font-bold p-5 flex justify-between items-center bg-gray-400 border-b">
+          <h1 className="font-bold text-lg text-white">Request A Quote</h1>
+          <button
+            className="font-bold text-yellow-500 scale-125"
             onClick={() => props.handleQuote("hidden")}
-          />
+          >
+            <CloseIcon />
+          </button>
         </div>
         <form onSubmit={handleSubmit} className="p-5">
           <div className="w-full flex flex-col sm:flex-row sm:justify-between">
@@ -123,14 +125,14 @@ const Quote = (props) => {
           <div className=" mt-5 md:mt-10 flex justify-center">
             <button
               type="button"
-              className="py-2 px-8 sm:px-12 text-white bg-red-500 mx-3 md:text-lg"
+              className="py-2 px-8 sm:px-12 text-white bg-red-500 mx-2 sm:mx-3 md:text-lg"
               onClick={() => props.handleQuote("hidden")}
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="py-2 px-8 sm:px-12 text-white bg-yellow-500 mx-3 md:text-lg"
+              className="py-2 px-8 sm:px-12 text-white bg-yellow-500 mx-2 sm:mx-3 md:text-lg"
             >
               Confirm
             </button>

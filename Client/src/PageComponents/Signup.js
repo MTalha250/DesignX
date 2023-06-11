@@ -49,7 +49,7 @@ const Signup = () => {
   return (
     <div className="min-h-screen py-5 px-6 lg:px-16 px-6 md:px-12">
       <div className="border-b border-black py-5 lg:w-2/3">
-        <h1 className="text-2xl lg:text-3xl font-semibold ">New Customer</h1>
+        <h1 className="text-2xl lg:text-3xl font-semibold">New Customer</h1>
         <p className="text-md lg:text-lg">
           Already Registered?{" "}
           <Link to="/login" className="text-yellow-500 underline p-2">

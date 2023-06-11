@@ -30,7 +30,7 @@ const Admin = () => {
       >
         <div className="relative flex bg-gray-400 p-3 flex justify-center items-center">
           <button
-            className="absolute left-2 font-bold text-yellow-500"
+            className="scale-125 absolute left-2 font-bold text-yellow-500"
             onClick={() => setSidebar("scale-x-0")}
           >
             <CloseIcon />
@@ -62,10 +62,12 @@ const Admin = () => {
         </div>
       </div>
       <div className="relative w-full h-full md:overflow-scroll">
-        <MenuIcon
-          className="md:invisible absolute top-1 left-1 cursor-pointer"
+        <button
+          className="scale-125 md:invisible absolute top-2 left-2"
           onClick={() => setSidebar("scale-x-full")}
-        />
+        >
+          <MenuIcon />
+        </button>
         <Outlet />
       </div>
     </div>

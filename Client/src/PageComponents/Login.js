@@ -49,7 +49,7 @@ function Login() {
   return (
     <div className="min-h-screen py-5 px-6 lg:px-16 flex flex-col md:flex-row w-full">
       <div className="flex flex-col  w-full md:w-1/2">
-        <p className="text-2xl lg:text-3xl font-semibold border-b border-black py-5">
+        <p className="text-2xl lg:text-3xl font-semibold border-b border-black pb-5 md:py-5">
           Login With Your Acccount
         </p>
         <form onSubmit={handleSubmit}>

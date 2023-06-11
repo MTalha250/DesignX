@@ -39,13 +39,18 @@ const Nav = ({ logo }) => {
 
   return (
     <div>
-      <div className="fixed md:static z-50 bg-white w-full flex justify-between p-2.5 md:py-3 lg:py-4 md:px-6 lg:px-10 items-center md:border-b border-gray-300">
-        <div className="md:hidden">
-          <MenuIcon
-            className="cursor-pointer"
+      <div className="fixed md:static z-50 bg-white w-full flex justify-between p-2.5 md:py-3 lg:py-4 md:px-6 lg:px-16 items-center md:border-b border-gray-300">
+        <div className="justify-center flex items-center md:hidden">
+          <button
+            className="scale-125"
             onClick={() => setSidebar("scale-x-full")}
-          />
-          <a href="tel:+923244264800" className="text-yellow-500  ml-2 sm:ml-3">
+          >
+            <MenuIcon />
+          </button>
+          <a
+            href="tel:+923244264800"
+            className="inline-block scale-[1.1] text-yellow-500  ml-2 sm:ml-3"
+          >
             <LocalPhoneIcon />
           </a>
         </div>
@@ -56,10 +61,10 @@ const Nav = ({ logo }) => {
             className="w-32 2xl:w-44"
           />
         </Link>
-        <div className="hidden md:flex relative w-1/2 p-2 lg:p-3 2xl:p-4 bg-gray-100">
+        <div className="hidden md:flex relative w-1/2 lg:w-[60%] p-2.5 2xl:p-4 bg-gray-100">
           <input
             type="text"
-            className="2xl:text-lg outline-none w-full bg-transparent"
+            className="text-lg outline-none w-full bg-transparent"
             placeholder="Search"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -102,7 +107,7 @@ const Nav = ({ logo }) => {
         </div>
         <div className="flex">
           {userData ? (
-            <button className="relative group text-lg font-bold mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10">
+            <button className="relative group text-xl font-bold mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10">
               Hi,{userData.fname}
               <div className="p-2 hidden group-focus-within:block absolute bg-white shadow z-50">
                 <Link
@@ -188,7 +193,7 @@ const Nav = ({ logo }) => {
         <div className="w-full h-full bg-white shadow overflow-scroll">
           <div className="relative bg-gray-400 p-3 border-b flex items-center justify-center">
             <button
-              className="left-2 font-bold absolute text-yellow-500"
+              className="left-2 font-bold absolute text-yellow-500 scale-125"
               onClick={() => setSidebar("scale-x-0")}
             >
               <CloseIcon />
