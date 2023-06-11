@@ -43,7 +43,7 @@ function App() {
             })[0]
           }
         />
-        <div className="pt-28 md:pt-0">
+        <div className="pt-32 md:pt-0">
           <Routes>
             <Route path="/">
               <Route path="*" element={<ErrorPage />} />
