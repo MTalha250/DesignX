@@ -107,7 +107,7 @@ const Nav = ({ logo }) => {
         </div>
         <div className="flex">
           {userData ? (
-            <button className="relative group text-xl font-bold mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10">
+            <span className="cursor-pointer relative group text-xl font-bold mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10">
               Hi,{userData.fname}
               <div className="p-2 hidden group-focus-within:block absolute bg-white shadow z-50">
                 <Link
@@ -127,7 +127,7 @@ const Nav = ({ logo }) => {
                   Sign Out
                 </button>
               </div>
-            </button>
+            </span>
           ) : (
             <Link to="login">
               <PermIdentityOutlinedIcon className="scale-125 lg:scale-150 2xl:scale-[2] mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10" />
