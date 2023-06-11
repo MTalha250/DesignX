@@ -9,10 +9,7 @@ const Admin = () => {
   return (
     <div className="flex md:h-screen w-full md:overflow-hidden">
       <div className="w-[15%] h-full hidden md:flex p-6 border-r border-black shadow flex-col">
-        <Link to="users" className="border-b border-black p-1.5 text-black">
-          Users
-        </Link>
-        <Link to="products" className="border-b border-black p-1.5 text-black">
+        <Link to="" className="border-b border-black p-1.5 text-black">
           Products
         </Link>
         <Link
@@ -20,6 +17,12 @@ const Admin = () => {
           className="border-b border-black p-1.5 text-black"
         >
           Add Product
+        </Link>
+        <Link to="users" className="border-b border-black p-1.5 text-black">
+          Users
+        </Link>
+        <Link to="quotes" className="border-b border-black p-1.5 text-black">
+          Quotes
         </Link>
       </div>
       <div
@@ -39,14 +42,7 @@ const Admin = () => {
         </div>
         <div className="p-3.5 flex flex-col">
           <Link
-            onClick={() => setSidebar("scale-x-0")}
-            to="users"
-            className="font-semibold border-b border-black p-2 text-black"
-          >
-            Users
-          </Link>
-          <Link
-            to="products"
+            to=""
             className="font-semibold border-b border-black p-2 text-black"
             onClick={() => setSidebar("scale-x-0")}
           >
@@ -58,6 +54,20 @@ const Admin = () => {
             onClick={() => setSidebar("scale-x-0")}
           >
             Add Product
+          </Link>
+          <Link
+            onClick={() => setSidebar("scale-x-0")}
+            to="users"
+            className="font-semibold border-b border-black p-2 text-black"
+          >
+            Users
+          </Link>
+          <Link
+            to="quotes"
+            className="font-semibold border-b border-black p-2 text-black"
+            onClick={() => setSidebar("scale-x-0")}
+          >
+            Quotes
           </Link>
         </div>
       </div>

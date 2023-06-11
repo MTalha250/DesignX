@@ -15,6 +15,7 @@ import Wishlist from "./SubComponents/Account/Wishlist";
 import Admin from "./SubComponents/Account/Admin";
 import Users from "./SubComponents/Account/Admin/Users";
 import Products from "./SubComponents/Account/Admin/Products";
+import Quotes from "./SubComponents/Account/Admin/Quotes";
 import AddProduct from "./SubComponents/Account/Admin/AddProduct";
 import UpdateProduct from "./SubComponents/Account/Admin/UpdateProduct";
 import { Toaster } from "react-hot-toast";
@@ -67,9 +68,10 @@ function App() {
                   <Route path="wishlist" element={<Wishlist />} />
                   {userData.type === "admin" && (
                     <Route path="admin" element={<Admin />}>
-                      <Route path="users" element={<Users />} />
-                      <Route path="products" element={<Products />} />
+                      <Route path="" element={<Products />} />
                       <Route path="addproduct" element={<AddProduct />} />
+                      <Route path="users" element={<Users />} />
+                      <Route path="quotes" element={<Quotes />} />
                       <Route
                         path="updateproduct/:id"
                         element={<UpdateProduct />}
