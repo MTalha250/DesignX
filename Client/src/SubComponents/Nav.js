@@ -116,7 +116,7 @@ const Nav = ({ logo }) => {
                 >
                   Account
                 </Link>
-                <span
+                <div
                   className="text-lg font-light px-3 py-1 whitespace-nowrap"
                   onClick={() => {
                     setUserData("");
@@ -125,7 +125,7 @@ const Nav = ({ logo }) => {
                   }}
                 >
                   Sign Out
-                </span>
+                </div>
               </div>
             </button>
           ) : (
