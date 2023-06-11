@@ -28,7 +28,8 @@ const Quote = (props) => {
           `Name: ${values.name} \nEmail: ${values.email} \nCity: ${values.city} \nNumber: ${values.no} \nMessage: ${values.message} \nProduct Name: ${props.name} \nProduct Id: ${props.id}`
         )}`;
         window.open(url);
-        // action.resetForm();
+        action.resetForm();
+        props.handleQuote("hidden");
       },
     });
 
