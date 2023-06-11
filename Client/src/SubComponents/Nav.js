@@ -138,7 +138,7 @@ const Nav = ({ logo }) => {
           </Link>
         </div>
       </div>
-      <div className="fixed md:static z-40 bg-white top-13 w-full flex justify-center py-3 px-4">
+      <div className="fixed md:static z-40 bg-white top-14 w-full flex justify-center py-3 px-4">
         <div className="w-full flex md:hidden relative p-1 sm:p-2 bg-gray-100">
           <input
             type="text"
