@@ -24,9 +24,9 @@ const Quote = (props) => {
       initialValues: initialValues,
       validationSchema: quoteSchema,
       onSubmit: async (values, action) => {
-        let url = `https://web.whatsapp.com/send?phone=${+923244264800}&text=${encodeURI(
+        let url = `https://wa.me/${+923244264800}/?text=${encodeURI(
           `Name: ${values.name} \nEmail: ${values.email} \nCity: ${values.city} \nNumber: ${values.no} \nMessage: ${values.message} \nProduct Name: ${props.name} \nProduct Id: ${props.id}`
-        )}&app_absent=0`;
+        )}`;
         window.open(url);
         // action.resetForm();
       },
