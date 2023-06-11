@@ -107,7 +107,7 @@ const Nav = ({ logo }) => {
         </div>
         <div className="flex">
           {userData ? (
-            <span className="cursor-pointer relative group text-xl font-bold mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10">
+            <button className="cursor-pointer relative group text-xl font-bold mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10">
               Hi,{userData.fname}
               <div className="p-2 hidden group-focus-within:block absolute bg-white shadow z-50">
                 <Link
@@ -116,7 +116,7 @@ const Nav = ({ logo }) => {
                 >
                   Account
                 </Link>
-                <button
+                <span
                   className="text-lg font-light px-3 py-1 whitespace-nowrap"
                   onClick={() => {
                     setUserData("");
@@ -125,9 +125,9 @@ const Nav = ({ logo }) => {
                   }}
                 >
                   Sign Out
-                </button>
+                </span>
               </div>
-            </span>
+            </button>
           ) : (
             <Link to="login">
               <PermIdentityOutlinedIcon className="scale-125 lg:scale-150 2xl:scale-[2] mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10" />
