@@ -96,8 +96,8 @@ const Item = (props) => {
           setDiv("0");
         }}
       >
-        <Link to={`/product/${props.id}`}>
-          <img src={props.img1} alt="" className="w-full" />
+        <Link to={`/product/${props.id}`} className="block h-[35vh]">
+          <img src={props.img1} alt="" className="w-full h-full" />
           <img
             src={props.img2}
             alt=""
@@ -109,7 +109,8 @@ const Item = (props) => {
         </Link>
         <div
           className={
-            "absolute bottom-0 right-0 flex flex-col p-2 opacity-" + div
+            "hidden sm:flex absolute bottom-0 right-0 flex-col p-2 opacity-" +
+            div
           }
         >
           <button
@@ -137,11 +138,11 @@ const Item = (props) => {
           </button>
         </div>
       </div>
-      <div className="flex justify-between items-start my-2 lg:my-3">
+      <div className="flex justify-between items-start my-2.5">
         <Link to={`/product/${props.id}`}>
-          <p className="lg:text-lg truncate">{props.name}</p>
+          <p className="text-lg truncate">{props.name}</p>
         </Link>
-        <button onClick={handleFavorite} className="md:hidden">
+        <button onClick={handleFavorite} className="ml-2 scale-125">
           {!check.includes(props.id) ? (
             <FavoriteBorderOutlinedIcon />
           ) : (
@@ -151,7 +152,7 @@ const Item = (props) => {
       </div>
 
       <button
-        className="py-2 px-3 lg:px-4 bg-yellow-500 text-white text-sm lg:text-base font-semibold lg:font-bold"
+        className="py-2 px-4 bg-yellow-500 text-white text-base font-semibold lg:font-bold"
         onClick={() => setQuote("block")}
       >
         Request A Quote

@@ -100,7 +100,7 @@ const ProductsPage = () => {
           </div>
         ) : null}
       </div>
-      <div className="my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-5 lg:gap-10 px-5 sm:px-8 lg:p-20">
+      <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-5 md:gap-2 lg:gap-10 px-8 md:px-5 lg:px-20">
         {products.map((d) => (
           <Item
             id={d._id}

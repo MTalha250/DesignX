@@ -9,7 +9,7 @@ const Account = () => {
 
   return (
     <div>
-      <div className="z-40 bg-white fixed md:static top-[16%] md:block  p-2 md:p-4 w-full border-b">
+      <div className="z-40 bg-white p-2 md:p-4 w-full border-b">
         <Link
           to=""
           className={
@@ -46,9 +46,7 @@ const Account = () => {
           </Link>
         ) : null}
       </div>
-      <div className="pt-10 md:pt-0">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 };
