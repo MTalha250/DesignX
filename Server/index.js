@@ -22,6 +22,9 @@ app.use("/user", userRoute);
 const productRoute = require("./Routes/ProductRouter");
 app.use("/product", productRoute);
 
+const quoteRoute = require("./Routes/QuoteRouter");
+app.use("/quotes", quoteRoute);
+
 app.listen(8080, () => {
   console.log("your server is running on port# 8080");
 });
