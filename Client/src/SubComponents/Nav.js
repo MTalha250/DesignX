@@ -33,6 +33,10 @@ const Nav = ({ logo }) => {
   };
   // console.log(logo);
 
+  const getInput = (value) => {
+    setInput(value);
+  };
+
   return (
     <div>
       <div className="fixed md:static z-50 bg-white w-full flex justify-between p-2.5 md:py-3 lg:py-4 md:px-6 lg:px-10 items-center md:border-b border-gray-300">
@@ -41,10 +45,7 @@ const Nav = ({ logo }) => {
             className="cursor-pointer"
             onClick={() => setSidebar("scale-x-full")}
           />
-          <a
-            href="tel:+923244264800"
-            className="scale-75 text-yellow-500  ml-1 sm:ml-3"
-          >
+          <a href="tel:+923244264800" className="text-yellow-500  ml-2 sm:ml-3">
             <LocalPhoneIcon />
           </a>
         </div>
@@ -52,7 +53,7 @@ const Nav = ({ logo }) => {
           <img
             src={process.env.REACT_APP_PATH + logo?.img}
             alt={logo?.name}
-            className="w-28 lg:w-32 2xl:w-44"
+            className="w-32 2xl:w-44"
           />
         </Link>
         <div className="hidden md:flex relative w-1/2 p-2 lg:p-3 2xl:p-4 bg-gray-100">
@@ -92,6 +93,8 @@ const Nav = ({ logo }) => {
                   <SItem
                     img={process.env.REACT_APP_PATH + d.imgs[0]}
                     name={d.name}
+                    id={d._id}
+                    getInput={getInput}
                   />
                 ))}
             </div>
@@ -99,14 +102,17 @@ const Nav = ({ logo }) => {
         </div>
         <div className="flex">
           {userData ? (
-            <button className="relative group sm:text-lg  font-semibold sm:font-bold">
+            <button className="relative group text-lg font-bold mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10">
               Hi,{userData.fname}
               <div className="p-2 hidden group-focus-within:block absolute bg-white shadow z-50">
-                <Link to="account" className="font-light border-b p-1">
+                <Link
+                  to="account"
+                  className="text-lg font-light border-b px-3 py-1"
+                >
                   Account
                 </Link>
                 <button
-                  className="font-light p-1 whitespace-nowrap"
+                  className="text-lg font-light px-3 py-1 whitespace-nowrap"
                   onClick={() => {
                     setUserData("");
                     localStorage.removeItem("User");
@@ -119,11 +125,11 @@ const Nav = ({ logo }) => {
             </button>
           ) : (
             <Link to="login">
-              <PermIdentityOutlinedIcon className="sm:scale-125 lg:scale-150 2xl:scale-[2] mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10" />
+              <PermIdentityOutlinedIcon className="scale-125 lg:scale-150 2xl:scale-[2] mr-1 sm:mr-2 lg:mr-3.5 2xl:ml-10" />
             </Link>
           )}
           <Link to={userData ? "account/wishlist" : "login"}>
-            <FavoriteBorderOutlinedIcon className="scale-75 sm:scale-100 lg:scale-125 2xl:scale-[1.75] ml-1 sm:ml-2 lg:ml-3.5 2xl:ml-10" />
+            <FavoriteBorderOutlinedIcon className="lg:scale-125 2xl:scale-[1.75] ml-1 sm:ml-2 lg:ml-3.5 2xl:ml-10" />
           </Link>
         </div>
       </div>
@@ -131,7 +137,7 @@ const Nav = ({ logo }) => {
         <div className="w-full flex md:hidden relative p-1 sm:p-2 bg-gray-100">
           <input
             type="text"
-            className="outline-none w-full bg-transparent"
+            className="p-1 text-lg outline-none w-full bg-transparent"
             placeholder="Search"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -165,6 +171,8 @@ const Nav = ({ logo }) => {
                   <SItem
                     img={process.env.REACT_APP_PATH + d.imgs[0]}
                     name={d.name}
+                    id={d._id}
+                    getInput={getInput}
                   />
                 ))}
             </div>
@@ -178,27 +186,27 @@ const Nav = ({ logo }) => {
         }
       >
         <div className="w-full h-full bg-white shadow overflow-scroll">
-          <div className="bg-gray-200 p-3 border-b flex items-center justify-between">
+          <div className="relative bg-gray-400 p-3 border-b flex items-center justify-center">
             <button
-              className="text-yellow-500"
+              className="left-2 font-bold absolute text-yellow-500"
               onClick={() => setSidebar("scale-x-0")}
             >
               <CloseIcon />
             </button>
-            <span className="font-bold text-lg">Main Menu</span>
+            <span className="text-white font-bold text-lg">Main Menu</span>
             <span></span>
           </div>
           {categories.map((c, i) => (
             <div className="my-5 px-4">
               <Collapsible
                 trigger={
-                  <p className="w-full flex justify-between">
+                  <p className="text-lg font-semibold w-full flex justify-between">
                     {c.name}
                     <KeyboardArrowDownOutlinedIcon />
                   </p>
                 }
                 triggerWhenOpen={
-                  <p className="w-full flex justify-between">
+                  <p className="text-lg font-semibold w-full flex justify-between">
                     {c.name}
                     <KeyboardArrowUpIcon />
                   </p>
@@ -218,7 +226,7 @@ const Nav = ({ logo }) => {
                   {c.subCategories.map((s, i) => (
                     <Collapsible
                       trigger={
-                        <p className="w-full flex justify-between w-full block text-sm">
+                        <p className="w-full flex justify-between">
                           {s.name}
                           <KeyboardArrowDownOutlinedIcon />
                         </p>
@@ -244,7 +252,7 @@ const Nav = ({ logo }) => {
                         {s.type.map((t, i) => (
                           <Link
                             to={`products/${c.name}/${s.name}/${t}`}
-                            className="hover:text-yellow-500 transition duration-300 block text-sm border-b my-3"
+                            className="hover:text-yellow-500 transition duration-300 block border-b my-3"
                             onClick={() => setSidebar("scale-x-0")}
                           >
                             {t}
