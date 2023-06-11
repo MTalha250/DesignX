@@ -37,7 +37,7 @@ const Quote = (props) => {
             productId: props.id,
           }
         );
-
+        alert(response.data.message);
         let url = `https://wa.me/${+923244264800}/?text=${encodeURI(
           `Name: ${values.name} \nEmail: ${values.email} \nCity: ${values.city} \nNumber: ${values.no} \nMessage: ${values.message} \nProduct Name: ${props.name} \nProduct Id: ${props.id}`
         )}`;
