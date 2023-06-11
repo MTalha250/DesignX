@@ -36,7 +36,7 @@ const ProductsPage = () => {
     <div>
       <div>
         {params.category && params.sub_category && params.type ? (
-          <div className="justify-self-start border-b border-gray-300 py-4 px-5 text-sm md:text-base md:px-10 tracking-wider">
+          <div className="justify-self-start border-b border-gray-300 py-4 px-5 md:px-10 tracking-wider">
             <Link to="/" className="mr-2">
               Home
             </Link>
@@ -69,7 +69,7 @@ const ProductsPage = () => {
                       <Link
                         key={t}
                         to={`${t}`}
-                        className="font-semibold shrink-0 px-5 md:px-10 py-3 md:py-2 text-sm md:text-lg"
+                        className="font-semibold shrink-0 px-5 md:px-10 py-3 md:py-2 md:text-lg"
                       >
                         {t}
                       </Link>

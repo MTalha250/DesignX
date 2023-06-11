@@ -20,7 +20,7 @@ const ItemPage = () => {
 
   return (
     <div>
-      <div className="border-b border-gray-300 py-4 px-5 text-sm md:text-base md:px-10 tracking-wider">
+      <div className="border-b border-gray-300 py-4 px-5 md:px-10 tracking-wider">
         <Link to="/" className="mr-2">
           Home
         </Link>
