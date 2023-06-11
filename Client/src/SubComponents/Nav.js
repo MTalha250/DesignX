@@ -142,7 +142,7 @@ const Nav = ({ logo }) => {
         <div className="w-full flex md:hidden relative p-1 sm:p-2 bg-gray-100">
           <input
             type="text"
-            className="p-1 text-lg outline-none w-full bg-transparent"
+            className="p-2 text-lg outline-none w-full bg-transparent"
             placeholder="Search"
             value={input}
             onChange={(e) => setInput(e.target.value)}
