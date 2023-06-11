@@ -24,6 +24,11 @@ const Quote = (props) => {
       initialValues: initialValues,
       validationSchema: quoteSchema,
       onSubmit: async (values, action) => {
+        console.log({
+          ...values,
+          product: props.name,
+          productId: props.id,
+        });
         const response = await axios.post(
           process.env.REACT_APP_PATH + "/quotes/add",
           {
