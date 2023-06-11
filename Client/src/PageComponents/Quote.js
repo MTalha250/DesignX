@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import ReactWhatsapp from "react-whatsapp";
 import { render } from "react-dom";
-
+import axios from "axios";
 const quoteSchema = Yup.object({
   name: Yup.string().min(2).max(20).required("Please Enter Your First Name"),
   email: Yup.string().email().required("Plaese Enter Your Email"),
@@ -24,6 +24,15 @@ const Quote = (props) => {
       initialValues: initialValues,
       validationSchema: quoteSchema,
       onSubmit: async (values, action) => {
+        const response = await axios.post(
+          process.env.REACT_APP_PATH + "/quotes/add",
+          {
+            ...values,
+            product: props.name,
+            productId: props.id,
+          }
+        );
+
         let url = `https://wa.me/${+923244264800}/?text=${encodeURI(
           `Name: ${values.name} \nEmail: ${values.email} \nCity: ${values.city} \nNumber: ${values.no} \nMessage: ${values.message} \nProduct Name: ${props.name} \nProduct Id: ${props.id}`
         )}`;

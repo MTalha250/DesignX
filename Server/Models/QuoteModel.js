@@ -6,6 +6,7 @@ var quoteSchema = new Schema({
   email: String,
   no: Number,
   city: String,
+  message: String,
   product: String,
   productId: String,
 });
