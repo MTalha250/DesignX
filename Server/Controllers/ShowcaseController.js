@@ -3,7 +3,11 @@ const showcaseModel = require("../Models/ShowcaseModel");
 module.exports = {
   create: function (req, res) {
     showcaseModel
-      .create(req.body)
+      .create({
+        img: req.file.path,
+        name: req.body.name,
+        imgs: req.files?.map((r) => r.path),
+      })
       .then(() => {
         res.send({ message: "Item inserted successfully" });
       })
@@ -11,6 +15,7 @@ module.exports = {
         res.send({ message: "Some error occurred" + err });
       });
   },
+
   getAll: function (req, res) {
     showcaseModel.find().then((results) => {
       res.send(results);
