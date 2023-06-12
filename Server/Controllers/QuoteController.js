@@ -16,4 +16,14 @@ module.exports = {
       res.send(results);
     });
   },
+  delete: function (req, res) {
+    quoteModel
+      .findByIdAndDelete(req.params.id)
+      .then(() => {
+        res.send({ message: "Quote deleted" });
+      })
+      .catch((err) => {
+        res.send("Something went wrong!!!!" + err);
+      });
+  },
 };
