@@ -26,25 +26,44 @@ const Quotes = () => {
   };
 
   return (
-    <div className="py-5 px-10">
+    <div className="py-5 px-5 sm:px-10">
       <h1 className="text-center text-2xl md:text-3xl font-bold">All Quotes</h1>
-      <div className="my-5 grid grid-cols-2 gap-5">
+      <div className="my-5 grid grid-cols-1 md:grid-cols-2 gap-5">
         {data?.map((d) => (
           <div className="relative p-3 border border-black rounded-xl">
             <button
-              className="absolute right-2 top-2"
+              className="text-yellow-500 absolute right-2 top-2"
               onClick={() => handleDelete(d._id)}
             >
               <CloseIcon />
             </button>
-            <p>Name: {d.name}</p>
-            <p>Email: {d.email}</p>
-            <p>Number: {d.no}</p>
-            <p>City: {d.city}</p>
-            <p>Message: {d.message}</p>
-            <p>
+            <p className="font-semibold">
+              Name: <span className="font-light">{d.name}</span>
+            </p>
+            <p className="font-semibold">
+              Email:{" "}
+              <a className="underline font-light" href={"mailto:" + d.email}>
+                {d.email}
+              </a>
+            </p>
+            <p className="font-semibold">
+              Number:{" "}
+              <a className="font-light underline" href={"tel:+92" + d.no}>
+                {d.no}
+              </a>
+            </p>
+            <p className="font-semibold">
+              City: <span className="font-light">{d.city}</span>
+            </p>
+            <p className="font-semibold">
+              Message: <span className="font-light">{d.message}</span>
+            </p>
+            <p className="font-semibold">
               Product:{" "}
-              <Link className="underline" to={`/product/${d.productId}`}>
+              <Link
+                className="font-light underline"
+                to={`/product/${d.productId}`}
+              >
                 {d.product}
               </Link>
             </p>

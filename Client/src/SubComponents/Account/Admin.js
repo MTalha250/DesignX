@@ -8,7 +8,7 @@ const Admin = () => {
   const [sidebar, setSidebar] = useState("scale-x-0");
   return (
     <div className="flex md:h-screen w-full md:overflow-hidden">
-      <div className="w-[15%] h-full hidden md:flex p-6 border-r border-black shadow flex-col">
+      <div className="w-1/4 lg:w-[20%] h-full hidden md:flex p-6 border-r border-black shadow flex-col">
         <Link to="" className="border-b border-black p-1.5 text-black">
           Products
         </Link>
