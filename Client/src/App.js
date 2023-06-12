@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./SubComponents/Nav";
 import Footer from "./SubComponents/Footer";
+import Showcase from "./PageComponents/Showcase";
 import Home from "./PageComponents/Home";
 import ErrorPage from "./PageComponents/ErrorPage";
 import ProductsPage from "./PageComponents/ProductsPage";
@@ -49,6 +50,7 @@ function App() {
             <Route path="/">
               <Route path="*" element={<ErrorPage />} />
               <Route index element={<Home data={data} />} />
+              <Route path="showcase" element={<Showcase />} />
               <Route path="products/:category" element={<ProductsPage />} />
               <Route
                 path="products/:category/:sub_category"

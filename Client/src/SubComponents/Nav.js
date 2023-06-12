@@ -39,6 +39,15 @@ const Nav = ({ logo }) => {
 
   return (
     <div>
+      <div className="text-sm hidden md:block p-2 border-b border-gray-300">
+        <Link to="/showcase" className="mx-3">
+          Showcase
+        </Link>
+        <span className="text-gray-400">|</span>
+        <a className="mx-3 text-yellow-500" href="tel:+923244264800">
+          +93 324 4264800
+        </a>
+      </div>
       <div className="fixed md:static z-50 bg-white w-full flex justify-between p-2.5 md:py-3 lg:py-4 md:px-6 lg:px-16 items-center md:border-b border-gray-300">
         <div className="justify-center flex items-center md:hidden">
           <button
@@ -138,8 +147,8 @@ const Nav = ({ logo }) => {
           </Link>
         </div>
       </div>
-      <div className="fixed md:static z-40 bg-white top-14 w-full flex justify-center py-3 px-4">
-        <div className="w-full flex md:hidden relative p-1 sm:p-2 bg-gray-100">
+      <div className="fixed md:hidden z-40 bg-white top-14 w-full flex justify-center py-3 px-4">
+        <div className="w-full flex relative p-1 sm:p-2 bg-gray-100">
           <input
             type="text"
             className="p-2 text-lg outline-none w-full bg-transparent"
