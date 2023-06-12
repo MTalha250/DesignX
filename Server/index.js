@@ -13,6 +13,9 @@ app.get("/", (req, res) => {
   res.send("Server is Running");
 });
 
+const showcaseRoute = require("./Routes/ShowcaseRouter");
+app.use("/showcase", showcaseRoute);
+
 const homeRoute = require("./Routes/HomeRouter");
 app.use("/home", homeRoute);
 
