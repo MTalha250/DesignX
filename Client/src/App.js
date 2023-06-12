@@ -22,15 +22,21 @@ import UpdateProduct from "./SubComponents/Account/Admin/UpdateProduct";
 import { Toaster } from "react-hot-toast";
 import { UserContext } from "./Context/UserContext";
 import axios from "axios";
+import ShowcaseImgs from "./PageComponents/ShowcaseImgs";
 function App() {
   const [userData, setUserData] = useContext(UserContext);
 
   const [data, setData] = useState([]);
+  const [showcase, setShowcase] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(process.env.REACT_APP_PATH + "home/get");
       setData(response.data);
+      const getshowcase = await axios.get(
+        process.env.REACT_APP_PATH + "showcase/get"
+      );
+      setShowcase(getshowcase.data);
     };
     getData();
   }, []);
@@ -50,7 +56,11 @@ function App() {
             <Route path="/">
               <Route path="*" element={<ErrorPage />} />
               <Route index element={<Home data={data} />} />
-              <Route path="showcase" element={<Showcase />} />
+              <Route path="showcase" element={<Showcase data={showcase} />} />
+              <Route
+                path="showcase/:id"
+                element={<ShowcaseImgs data={showcase} />}
+              />
               <Route path="products/:category" element={<ProductsPage />} />
               <Route
                 path="products/:category/:sub_category"
