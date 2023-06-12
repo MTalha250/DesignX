@@ -12,11 +12,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-router.post(
-  "/add",
-  upload.single("img") || upload.array("imgs", 10),
-  showcaseController.create
-);
+router.post("/add", upload.array("imgs", 10), showcaseController.create);
 router.get("/get", showcaseController.getAll);
 router.delete("/delete/:id", showcaseController.delete);
 

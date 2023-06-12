@@ -4,9 +4,8 @@ module.exports = {
   create: function (req, res) {
     showcaseModel
       .create({
-        img: req.file.path,
-        name: req.body.name,
         imgs: req.files?.map((r) => r.path),
+        name: req.body.name,
       })
       .then(() => {
         res.send({ message: "Item inserted successfully" });
