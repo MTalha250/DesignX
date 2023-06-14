@@ -24,7 +24,7 @@ const Item = (props) => {
       </Link>
       <div className="w-full flex justify-between">
         <Link
-          to={`../updateproduct/${props.id}`}
+          to={`./updateproduct/${props.id}`}
           className="text-center font-bold text-white w-[45%] text-sm py-2 bg-yellow-500"
         >
           Update

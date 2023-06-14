@@ -74,7 +74,7 @@ const UpdateProduct = () => {
         process.env.REACT_APP_PATH + "product/products"
       );
       setAllData(getData.data);
-      navigate("../products");
+      navigate(-1);
     }
   };
 

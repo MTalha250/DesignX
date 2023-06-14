@@ -81,13 +81,13 @@ function App() {
                   {userData.type === "admin" && (
                     <Route path="admin" element={<Admin />}>
                       <Route path="" element={<Products />} />
-                      <Route path="addproduct" element={<AddProduct />} />
-                      <Route path="users" element={<Users />} />
-                      <Route path="quotes" element={<Quotes />} />
                       <Route
                         path="updateproduct/:id"
                         element={<UpdateProduct />}
                       />
+                      <Route path="addproduct" element={<AddProduct />} />
+                      <Route path="users" element={<Users />} />
+                      <Route path="quotes" element={<Quotes />} />
                     </Route>
                   )}
                 </Route>

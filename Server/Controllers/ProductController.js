@@ -1,10 +1,17 @@
 const productModel = require("../Models/ProductModel");
+const cloudinary = require("cloudinary");
 
 module.exports = {
-  create: function (req, res) {
+  create: async function (req, res) {
+    const imgs = [];
+    const files = req.files;
+    for (let file of files) {
+      const result = await cloudinary.v2.uploader.upload(file.path);
+      imgs.push(result.secure_url);
+    }
     productModel
       .create({
-        imgs: req.files.map((r) => r.path),
+        imgs: imgs,
         ...req.body,
       })
       .then(() => {
@@ -14,6 +21,7 @@ module.exports = {
         res.send({ message: "Some error occurred" + err });
       });
   },
+
   getAll: function (req, res) {
     productModel.find().then((results) => {
       res.send(results);
@@ -29,11 +37,17 @@ module.exports = {
         res.send("Something went wrong!!!!" + err);
       });
   },
-  update: function (req, res) {
+  update: async function (req, res) {
     if (req.files.length > 0) {
+      const imgs = [];
+      const files = req.files;
+      for (let file of files) {
+        const result = await cloudinary.v2.uploader.upload(file.path);
+        imgs.push(result.secure_url);
+      }
       productModel
         .findByIdAndUpdate(req.params.id, {
-          imgs: req.files.map((r) => r.path),
+          imgs: imgs,
           ...req.body,
         })
         .then(() => {
