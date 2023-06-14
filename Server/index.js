@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -6,7 +7,7 @@ require("./Database/database");
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 app.use("/Uploads", express.static("Uploads"));
-app.set("secretKey", "Mein Nai Bataon Ga");
+app.set("secretKey", process.env.SECRET_KEY);
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
