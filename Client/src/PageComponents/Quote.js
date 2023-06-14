@@ -2,8 +2,6 @@ import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import ReactWhatsapp from "react-whatsapp";
-import { render } from "react-dom";
 import axios from "axios";
 const quoteSchema = Yup.object({
   name: Yup.string().min(2).max(20).required("Please Enter Your First Name"),
