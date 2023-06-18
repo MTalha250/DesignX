@@ -53,9 +53,9 @@ const Home = ({ data }) => {
           .map((d) => (
             <Link
               to={d.link}
-              className="border flex flex-col justify-center items-center p-2"
+              className="border flex flex-col justify-end items-center p-2"
             >
-              <img src={process.env.REACT_APP_PATH + d.img} className="w-1/2" />
+              <img src={d.img} className="w-1/2 object-cover" />
               <p className="text-[11px] sm:text-sm md:text-base mt-2">
                 {d.name}
               </p>

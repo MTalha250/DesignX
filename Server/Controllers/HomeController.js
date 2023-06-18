@@ -1,10 +1,15 @@
 const homeModel = require("../Models/HomeModel");
+const cloudinary = require("cloudinary");
 
 module.exports = {
-  create: function (req, res) {
+  create: async function (req, res) {
+    const result = await cloudinary.v2.uploader.upload(req.file.path, {
+      folder: "DesignX",
+      use_filename: true,
+    });
     homeModel
       .create({
-        img: req.file.path,
+        img: result.secure_url,
         ...req.body,
       })
       .then(() => {

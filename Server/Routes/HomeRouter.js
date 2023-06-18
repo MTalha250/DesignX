@@ -3,9 +3,6 @@ const router = express.Router();
 var homeController = require("../Controllers/HomeController");
 const multer = require("multer");
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "Uploads");
-  },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname);
   },
