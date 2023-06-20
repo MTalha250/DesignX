@@ -9,7 +9,7 @@ import { DataContext } from "../../Context/DataContext";
 import { toast } from "react-hot-toast";
 import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
-
+import dateFormat from "dateformat";
 const Reviews = ({ data }) => {
   const [hover, setHover] = useState(-1);
   const [userData, setUserData] = useContext(UserContext);
@@ -185,7 +185,7 @@ const Reviews = ({ data }) => {
                 <h2 className="flex justify-between font-bold text-yellow-600">
                   <span>{d.name}</span>
                   <span className="text-gray-500 text-xs">
-                    {d.created_at.slice(0, 10)}
+                    {dateFormat(d.created_at, "dd-mm-yy")}
                   </span>
                 </h2>
                 <div className="items-center w-full flex justify-between">
