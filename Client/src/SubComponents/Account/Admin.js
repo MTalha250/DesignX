@@ -7,8 +7,8 @@ const Admin = () => {
   const [userData, setUserData] = useContext(UserContext);
   const [sidebar, setSidebar] = useState("scale-x-0");
   return (
-    <div className="flex md:h-screen w-full md:overflow-hidden">
-      <div className="w-1/4 lg:w-[20%] h-full hidden md:flex p-6 border-r border-black shadow flex-col">
+    <div className="flex w-full md:overflow-hidden">
+      <div className="w-1/4 lg:w-[20%] min-h-screen hidden md:flex p-6 border-r border-black shadow flex-col">
         <Link to="" className="border-b border-black p-1.5 text-black">
           Products
         </Link>
@@ -71,7 +71,7 @@ const Admin = () => {
           </Link>
         </div>
       </div>
-      <div className="relative w-full h-full md:overflow-scroll">
+      <div className="relative w-full">
         <button
           className="scale-125 md:invisible absolute top-2 left-2"
           onClick={() => setSidebar("scale-x-full")}

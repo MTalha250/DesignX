@@ -32,11 +32,7 @@ const Products = () => {
             }
           })
           .map((d) => (
-            <AItem
-              id={d._id}
-              img={process.env.REACT_APP_PATH + d.imgs[0]}
-              name={d.name}
-            />
+            <AItem id={d._id} img={d.imgs[0]} name={d.name} />
           ))}
       </div>
     </div>

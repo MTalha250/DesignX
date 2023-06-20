@@ -37,21 +37,16 @@ const ProductsPage = () => {
       <div>
         {params.category && params.sub_category && params.type ? (
           <div className="justify-self-start border-b border-gray-300 py-4 px-5 md:px-10 tracking-wider">
-            <Link to="/" className="mr-2">
-              Home
+            <Link to="/">Home</Link>
+            <Link to={`/products/${params.category}`}>
+              {" "}
+              / {params.category}
             </Link>
-            /
-            <Link to={`/products/${params.category}`} className="mx-2">
-              {params.category}
+            <Link to={`/products/${params.category}/${params.sub_category}`}>
+              {" "}
+              / {params.sub_category}
             </Link>
-            /
-            <Link
-              to={`/products/${params.category}/${params.sub_category}`}
-              className="mx-2"
-            >
-              {params.sub_category}
-            </Link>
-            /<span className="mx-2">{params.type}</span>
+            <span> / {params.type}</span>
           </div>
         ) : params.category && params.sub_category ? (
           <div className="w-full flex justify-center my-4 px-10 overflow-scroll md:flex-wrap border-b border-gray-300">
@@ -102,12 +97,7 @@ const ProductsPage = () => {
       </div>
       <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-5 md:gap-2 lg:gap-10 px-8 md:px-5 lg:px-20">
         {products.map((d) => (
-          <Item
-            id={d._id}
-            img1={process.env.REACT_APP_PATH + d.imgs[0]}
-            img2={process.env.REACT_APP_PATH + d.imgs[1]}
-            name={d.name}
-          />
+          <Item id={d._id} img1={d.imgs[0]} img2={d.imgs[1]} name={d.name} />
         ))}
       </div>
     </div>

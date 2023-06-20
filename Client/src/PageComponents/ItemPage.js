@@ -21,32 +21,34 @@ const ItemPage = () => {
   return (
     <div>
       <div className="border-b border-gray-300 py-4 px-5 md:px-10 tracking-wider">
-        <Link to="/" className="mr-2">
-          Home
-        </Link>
-        /
-        <Link to={`/products/${itemData?.category}`} className="mx-2">
-          {itemData?.category}
-        </Link>
-        /
-        <Link
-          to={`/products/${itemData?.category}/${itemData?.sub_category}`}
-          className="mx-2"
-        >
-          {itemData?.sub_category}
-        </Link>
-        /
-        <Link
-          to={`/products/${itemData?.category}/${itemData?.sub_category}/${itemData?.type}`}
-          className="mx-2"
-        >
-          {itemData?.type}
-        </Link>
-        /<span className="mx-2">{itemData?.name}</span>
+        <Link to="/">Home</Link>
+        {itemData?.category && (
+          <Link to={`/products/${itemData?.category}`}>
+            {" "}
+            / {itemData?.category}
+          </Link>
+        )}
+        {itemData?.sub_category && (
+          <Link
+            to={`/products/${itemData?.category}/${itemData?.sub_category}`}
+          >
+            {" "}
+            / {itemData?.sub_category}
+          </Link>
+        )}
+        {itemData?.type && (
+          <Link
+            to={`/products/${itemData?.category}/${itemData?.sub_category}/${itemData?.type}`}
+          >
+            {" "}
+            / {itemData?.type}
+          </Link>
+        )}
+        <span> / {itemData?.name}</span>
       </div>
       <Main data={itemData} />
-      <div className="hidden md:block">
-        <div className="flex px-16 lg:px-20 w-full">
+      <div className="my-20 hidden md:block px-10">
+        <div className="flex w-full pl-10">
           <button
             onClick={() => setView(0)}
             className={

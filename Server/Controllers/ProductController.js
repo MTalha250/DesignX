@@ -1,12 +1,14 @@
 const productModel = require("../Models/ProductModel");
 const cloudinary = require("cloudinary");
-
 module.exports = {
   create: async function (req, res) {
     const imgs = [];
     const files = req.files;
     for (let file of files) {
-      const result = await cloudinary.v2.uploader.upload(file.path);
+      const result = await cloudinary.v2.uploader.upload(file.path, {
+        folder: "DesignX",
+        use_filename: true,
+      });
       imgs.push(result.secure_url);
     }
     productModel
@@ -37,12 +39,16 @@ module.exports = {
         res.send("Something went wrong!!!!" + err);
       });
   },
+
   update: async function (req, res) {
     if (req.files.length > 0) {
       const imgs = [];
       const files = req.files;
       for (let file of files) {
-        const result = await cloudinary.v2.uploader.upload(file.path);
+        const result = await cloudinary.v2.uploader.upload(file.path, {
+          folder: "DesignX",
+          use_filename: true,
+        });
         imgs.push(result.secure_url);
       }
       productModel

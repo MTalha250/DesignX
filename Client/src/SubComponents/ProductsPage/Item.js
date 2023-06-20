@@ -98,14 +98,16 @@ const Item = (props) => {
       >
         <Link to={`/product/${props.id}`} className="block h-[35vh]">
           <img src={props.img1} alt="" className="w-full h-full" />
-          <img
-            src={props.img2}
-            alt=""
-            className={
-              "h-full top-0 absolute w-full transiton duration-300  opacity-" +
-              img
-            }
-          />
+          {props.img2 && (
+            <img
+              src={props.img2}
+              alt=""
+              className={
+                "h-full top-0 absolute w-full transiton duration-300  opacity-" +
+                img
+              }
+            />
+          )}
         </Link>
         <div
           className={

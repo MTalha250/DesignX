@@ -37,12 +37,7 @@ const Grid = ({ data }) => {
             return d._id !== data._id;
           })
           .map((d) => (
-            <Item
-              id={d._id}
-              img1={process.env.REACT_APP_PATH + d.imgs[0]}
-              img2={process.env.REACT_APP_PATH + d.imgs[1]}
-              name={d.name}
-            />
+            <Item id={d._id} img1={d.imgs[0]} img2={d.imgs[1]} name={d.name} />
           ))}
       </div>
     </div>

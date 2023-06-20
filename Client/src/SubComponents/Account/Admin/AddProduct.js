@@ -16,6 +16,11 @@ const AddProduct = () => {
     name: "",
     size: "",
     description: "",
+    design: "",
+    versatility: "",
+    functionality: "",
+    features: "",
+    dimensions: "",
     category: "",
     sub_category: "",
     type: "",
@@ -51,6 +56,11 @@ const AddProduct = () => {
       formData.append("name", data.name);
       formData.append("size", data.size);
       formData.append("description", data.description);
+      formData.append("design", data.design);
+      formData.append("versatility", data.versatility);
+      formData.append("functionality", data.functionality);
+      formData.append("features", data.features);
+      formData.append("dimensions", data.dimensions);
       formData.append("category", data.category);
       formData.append("sub_category", data.sub_category);
       formData.append("type", data.type);
@@ -69,6 +79,11 @@ const AddProduct = () => {
         name: "",
         size: "",
         description: "",
+        design: "",
+        versatility: "",
+        functionality: "",
+        features: "",
+        dimensions: "",
         category: "",
         sub_category: "",
         type: "",
@@ -78,13 +93,13 @@ const AddProduct = () => {
 
   return (
     <div className="md:py-5 md:px-10">
+      <h1 className="text-center text-2xl md:text-3xl mb-6 font-bold">
+        Add Product
+      </h1>
       <form
-        className="mx-auto md:w-2/3 lg:w-1/2 md:shadow  flex flex-col p-3 md:p-6"
+        className="mx-auto md:shadow flex flex-col p-3 md:p-6"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-center text-2xl md:text-3xl mb-6 font-bold">
-          Add Product
-        </h1>
         <label htmlFor="imgs" className="font-bold">
           Images :
         </label>
@@ -121,19 +136,6 @@ const AddProduct = () => {
           value={data.size}
           onChange={handleChange}
         />
-        <label htmlFor="description" className="font-bold  mt-3">
-          Description :
-        </label>
-        <textarea
-          rows={5}
-          name="description"
-          id="description"
-          className="w-full bg-gray-100 text-sm md:text-base p-2 outline-none mb-1"
-          placeholder="Item Description"
-          value={data.description}
-          onChange={handleChange}
-        />
-
         <label htmlFor="category" className="font-bold  mt-3">
           Category :
         </label>
@@ -192,8 +194,74 @@ const AddProduct = () => {
               placeholder="Item Type"
             />
           </div>
-        </div>
-        <button className="bg-yellow-500 text-white mt-6 py-2.5 px-3.5 font-bold">
+        </div>{" "}
+        <label htmlFor="description" className="mt-3  font-bold">
+          Description :
+        </label>
+        <textarea
+          rows={3}
+          name="description"
+          id="description"
+          className="w-full bg-gray-100 text-sm md:text-base p-2 outline-none mb-1"
+          value={data.description}
+          onChange={handleChange}
+        />
+        <label htmlFor="design" className="font-bold  mt-3">
+          Design :
+        </label>
+        <textarea
+          rows={3}
+          name="design"
+          id="design"
+          className="w-full bg-gray-100 text-sm md:text-base p-2 outline-none mb-1"
+          value={data.design}
+          onChange={handleChange}
+        />
+        <label htmlFor="versatility" className="font-bold  mt-3">
+          Versatility :
+        </label>
+        <textarea
+          rows={3}
+          name="versatility"
+          id="versatility"
+          className="w-full bg-gray-100 text-sm md:text-base p-2 outline-none mb-1"
+          value={data.versatility}
+          onChange={handleChange}
+        />
+        <label htmlFor="functionality" className="font-bold  mt-3">
+          Functionality :
+        </label>
+        <textarea
+          rows={3}
+          name="functionality"
+          id="functionality"
+          className="w-full bg-gray-100 text-sm md:text-base p-2 outline-none mb-1"
+          value={data.functionality}
+          onChange={handleChange}
+        />
+        <label htmlFor="features" className="font-bold  mt-3">
+          Features :
+        </label>
+        <textarea
+          rows={3}
+          name="features"
+          id="features"
+          className="w-full bg-gray-100 text-sm md:text-base p-2 outline-none mb-1"
+          value={data.features}
+          onChange={handleChange}
+        />
+        <label htmlFor="dimensions" className="font-bold  mt-3">
+          Dimensions :
+        </label>
+        <textarea
+          rows={3}
+          name="dimensions"
+          id="dimensions"
+          className="w-full bg-gray-100 text-sm md:text-base p-2 outline-none mb-1"
+          value={data.dimensions}
+          onChange={handleChange}
+        />
+        <button className="w-full bg-yellow-500 text-white mt-6 py-2.5 font-bold">
           Add Product
         </button>
       </form>

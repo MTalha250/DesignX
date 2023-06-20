@@ -36,7 +36,7 @@ const Main = ({ data }) => {
         >
           {data?.imgs?.map((d) => (
             <SwiperSlide>
-              <img src={process.env.REACT_APP_PATH + d} alt="" />
+              <img src={d} alt="" />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -44,7 +44,7 @@ const Main = ({ data }) => {
       <div className="hidden lg:block sticky top-20 p-1 snap-y snap-mandatory scrollbar-none w-[8%] overflow-scroll h-[50vh]">
         {data?.imgs?.map((d) => (
           <img
-            src={process.env.REACT_APP_PATH + d}
+            src={d}
             alt=""
             className="cursor-pointer my-1 border snap-start snap-always"
             onClick={() => setImg(d)}
@@ -52,15 +52,11 @@ const Main = ({ data }) => {
         ))}
       </div>
       <div className="hidden md:block sticky top-20 w-[48%] lg:w-[45%] h-[50vh]">
-        <img
-          src={process.env.REACT_APP_PATH + img}
-          alt=""
-          className="w-full h-full"
-        />
+        <img src={img} alt="" className="w-full h-full" />
         <div className="hidden md:flex lg:hidden p-1 snap-x snap-mandatory scrollbar-none w-full overflow-scroll">
           {data?.imgs?.map((d) => (
             <img
-              src={process.env.REACT_APP_PATH + d}
+              src={d}
               alt=""
               className="w-1/5 shrink-0 border snap-start snap-always"
               onClick={() => setImg(d)}
