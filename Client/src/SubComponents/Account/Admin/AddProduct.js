@@ -93,7 +93,7 @@ const AddProduct = () => {
 
   return (
     <div className="md:py-5 md:px-10">
-      <h1 className="text-center text-2xl md:text-3xl mb-6 font-bold">
+      <h1 className="text-center text-2xl md:text-3xl my-6 font-bold">
         Add Product
       </h1>
       <form
@@ -194,7 +194,7 @@ const AddProduct = () => {
               placeholder="Item Type"
             />
           </div>
-        </div>{" "}
+        </div>
         <label htmlFor="description" className="mt-3  font-bold">
           Description :
         </label>

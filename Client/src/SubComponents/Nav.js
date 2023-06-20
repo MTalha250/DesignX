@@ -312,12 +312,14 @@ const Nav = ({ logo }) => {
                     <ul>
                       {s.type.map((t, i) => (
                         <li key={i} className="w-full">
-                          <Link
-                            to={`products/${c.name}/${s.name}/${t}`}
-                            className="p-1 border-b w-full block text-gray-500 text-sm"
-                          >
-                            {t}
-                          </Link>
+                          {t && (
+                            <Link
+                              to={`products/${c.name}/${s.name}/${t}`}
+                              className="p-1 border-b w-full block text-gray-500 text-sm"
+                            >
+                              {t}
+                            </Link>
+                          )}
                         </li>
                       ))}
                     </ul>
