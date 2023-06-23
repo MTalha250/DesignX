@@ -40,8 +40,11 @@ function Login() {
         toast(response.data.message);
         if (response.data.alert) {
           setUserData(response.data.userData);
-          localStorage.setItem("User", JSON.stringify(response.data.userData));
-          navigate(-1);
+          localStorage.setItem(
+            "User",
+            JSON.stringify([response.data.token, response.data.userData.id])
+          );
+          navigate("/");
         }
       },
     });

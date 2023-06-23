@@ -33,13 +33,13 @@ module.exports = {
             id: userInfo._id,
             no: userInfo.no,
             type: userInfo.type,
-            token: token,
             favorites: userInfo.favorites,
           };
           res.send({
             message: "Signed in as " + userData.fname,
             alert: true,
             userData: userData,
+            token: token,
           });
         } else {
           res.send({ message: "Incorrect password", alert: false });
@@ -53,6 +53,26 @@ module.exports = {
     userModel.find().then((results) => {
       res.send(results);
     });
+  },
+  getSingle: function (req, res) {
+    userModel
+      .findById(req.params.id)
+      .then((userInfo) => {
+        const userData = {
+          fname: userInfo.fname,
+          lname: userInfo.lname,
+          email: userInfo.email,
+          address: userInfo.address,
+          id: userInfo._id,
+          no: userInfo.no,
+          type: userInfo.type,
+          favorites: userInfo.favorites,
+        };
+        res.send(userData);
+      })
+      .catch((err) => {
+        res.send("something went wrong!!!" + err);
+      });
   },
   delete: function (req, res) {
     userModel

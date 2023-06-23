@@ -43,16 +43,6 @@ const Account = () => {
             email: values.email,
             address: values.address,
           });
-          localStorage.setItem(
-            "User",
-            JSON.stringify({
-              ...userData,
-              fname: values.fname,
-              lname: values.lname,
-              email: values.email,
-              address: values.address,
-            })
-          );
           setEdit(false);
         }
       },

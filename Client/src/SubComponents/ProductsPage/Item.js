@@ -32,12 +32,7 @@ const Item = (props) => {
         );
         userData.favorites.splice(index, 1);
         setUserData({ ...userData });
-        localStorage.setItem(
-          "User",
-          JSON.stringify({
-            ...userData,
-          })
-        );
+
         const response = await axios.put(
           process.env.REACT_APP_PATH + `user/update/${userData.id}`,
           {
@@ -56,12 +51,6 @@ const Item = (props) => {
           },
         ];
         setUserData({ ...userData });
-        localStorage.setItem(
-          "User",
-          JSON.stringify({
-            ...userData,
-          })
-        );
         const response = await axios.put(
           process.env.REACT_APP_PATH + `user/update/${userData.id}`,
           {
