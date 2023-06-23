@@ -28,7 +28,7 @@ const Main = ({ data }) => {
         quote={quote}
         handleQuote={handleQuote}
       />
-      <div className="w-full sticky top-24 md:hidden">
+      <div className="bg-white w-full sticky top-32 md:hidden">
         <Swiper
           modules={[Pagination]}
           autoplay={true}
