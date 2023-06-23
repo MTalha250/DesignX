@@ -20,10 +20,15 @@ const ItemPage = () => {
 
   return (
     <div>
-      <div className="border-b border-gray-300 py-4 px-5 md:px-10 tracking-wider">
-        <Link to="/">Home</Link>
+      <div className="border-b border-gray-300 py-4 px-5 md:px-10 tracking-widest text-gray-600">
+        <Link to="/" className="transition duration-300 hover:text-yellow-500">
+          Home
+        </Link>
         {itemData?.category && (
-          <Link to={`/products/${itemData?.category}`}>
+          <Link
+            to={`/products/${itemData?.category}`}
+            className="transition duration-300 hover:text-yellow-500"
+          >
             {" "}
             / {itemData?.category}
           </Link>
@@ -31,6 +36,7 @@ const ItemPage = () => {
         {itemData?.sub_category && (
           <Link
             to={`/products/${itemData?.category}/${itemData?.sub_category}`}
+            className="transition duration-300 hover:text-yellow-500"
           >
             {" "}
             / {itemData?.sub_category}
@@ -39,6 +45,7 @@ const ItemPage = () => {
         {itemData?.type && (
           <Link
             to={`/products/${itemData?.category}/${itemData?.sub_category}/${itemData?.type}`}
+            className="transition duration-300 hover:text-yellow-500"
           >
             {" "}
             / {itemData?.type}
