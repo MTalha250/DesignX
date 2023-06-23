@@ -40,7 +40,7 @@ const ProductsPage = () => {
     <div className="min-h-screen">
       <div>
         {params.category && params.sub_category && params.type ? (
-          <div className="justify-self-start border-b border-gray-200 py-4 px-5 md:px-10 tracking-widest text-gray-600">
+          <div className="text-sm justify-self-start border-b border-gray-200 py-4 px-5 md:px-10 tracking-widest text-gray-600">
             <Link
               to="/"
               className="transition duration-300 hover:text-yellow-500"

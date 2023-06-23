@@ -28,15 +28,16 @@ const Main = ({ data }) => {
         quote={quote}
         handleQuote={handleQuote}
       />
-      <div className="bg-white w-full sticky top-32 md:hidden">
+      <div className="bg-white h-[35vh] w-full sticky top-32 md:hidden">
         <Swiper
           modules={[Pagination]}
           autoplay={true}
           pagination={{ clickable: true }}
+          className="h-full w-full"
         >
           {data?.imgs?.map((d) => (
             <SwiperSlide>
-              <img src={d} alt="" />
+              <img src={d} alt="" className="w-full h-full" />
             </SwiperSlide>
           ))}
         </Swiper>

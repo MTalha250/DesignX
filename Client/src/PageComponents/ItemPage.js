@@ -20,7 +20,7 @@ const ItemPage = () => {
 
   return (
     <div>
-      <div className="border-b border-gray-300 py-4 px-5 md:px-10 tracking-widest text-gray-600">
+      <div className="text-sm border-b border-gray-300 py-4 px-5 md:px-10 tracking-widest text-gray-600">
         <Link to="/" className="transition duration-300 hover:text-yellow-500">
           Home
         </Link>
@@ -85,20 +85,20 @@ const ItemPage = () => {
           className="my-2"
           trigger={
             <div className="my-2 flex justify-between">
-              <span className="leading-8 font-semibold text-sm w-4/5 p-2 bg-gray-300">
+              <span className="leading-8 font-semibold text-sm w-4/5 px-2 py-3 bg-gray-300">
                 PRODUCT DESCRIPTION
               </span>
-              <button className="w-1/5 p-2 bg-black text-white">
+              <button className="w-1/5 px-2 py-3 bg-black text-white">
                 <KeyboardArrowDownOutlinedIcon />
               </button>
             </div>
           }
           triggerWhenOpen={
             <div className="my-2 flex justify-between">
-              <span className="leading-8 font-semibold text-sm w-4/5 p-2 bg-gray-300">
+              <span className="leading-8 font-semibold text-sm w-4/5 px-2 py-3 bg-gray-300">
                 PRODUCT DESCRIPTION
               </span>
-              <button className="w-1/5 p-2 bg-black text-white">
+              <button className="w-1/5 px-2 py-3 bg-black text-white">
                 <KeyboardArrowUpIcon />
               </button>
             </div>
@@ -111,20 +111,20 @@ const ItemPage = () => {
           className="my-2"
           trigger={
             <div className="my-2 flex justify-between">
-              <span className="leading-8 font-semibold text-sm w-4/5 p-2 bg-gray-300">
+              <span className="leading-8 font-semibold text-sm w-4/5 px-2 py-3 bg-gray-300">
                 REVIEWS
               </span>
-              <button className="w-1/5 p-2 bg-black text-white">
+              <button className="w-1/5 px-2 py-3 bg-black text-white">
                 <KeyboardArrowDownOutlinedIcon />
               </button>
             </div>
           }
           triggerWhenOpen={
             <div className="my-2 flex justify-between">
-              <span className="leading-8 font-semibold text-sm w-4/5 p-2 bg-gray-300">
+              <span className="leading-8 font-semibold text-sm w-4/5 px-2 py-3 bg-gray-300">
                 REVIEWS
               </span>
-              <button className="w-1/5 p-2 bg-black text-white">
+              <button className="w-1/5 px-2 py-3 bg-black text-white">
                 <KeyboardArrowUpIcon />
               </button>
             </div>

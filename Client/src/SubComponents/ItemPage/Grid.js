@@ -27,7 +27,7 @@ const Grid = ({ data }) => {
     });
 
   return (
-    <div className="my-5 px-5 sm:px-8 lg:p-20">
+    <div className="mt-20 mb-10  px-5 sm:px-8 lg:p-20">
       <h1 className="my-5 font-semibold text-2xl">
         Products similar to this item
       </h1>
