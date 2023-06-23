@@ -64,11 +64,7 @@ const Nav = ({ logo }) => {
           </a>
         </div>
         <Link to={logo?.link}>
-          <img
-            src={process.env.REACT_APP_PATH + logo?.img}
-            alt={logo?.name}
-            className="w-32 2xl:w-44"
-          />
+          <img src={logo?.img} alt={logo?.name} className="w-32 2xl:w-44" />
         </Link>
         <div className="hidden md:flex relative w-1/2 lg:w-[60%] p-2.5 2xl:p-4 bg-gray-100">
           <input
