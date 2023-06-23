@@ -45,7 +45,7 @@ const Home = ({ data }) => {
           SHOP BY CATEGORY
         </span>
       </h1>
-      <div className="grid grid-cols-4 lg:grid-cols-5 md:gap-3 my-5 px-2 md:px-20 lg:px-44 2xl:px-96">
+      <div className="grid grid-cols-4 lg:grid-cols-5 md:gap-3 my-5 px-5 md:px-20 lg:px-48 2xl:px-96">
         {data
           ?.filter((d) => {
             return d.category === "categories";
@@ -55,7 +55,7 @@ const Home = ({ data }) => {
               to={d.link}
               className="border flex flex-col justify-end items-center p-2"
             >
-              <img src={d.img} className="w-1/2 object-cover" />
+              <img src={d.img} className="w-1/3 object-cover" />
               <p className="text-[11px] sm:text-sm md:text-base mt-2">
                 {d.name}
               </p>
