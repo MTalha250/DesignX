@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DataContext } from "../Context/DataContext";
 import Categories from "../SubComponents/Categories";
@@ -9,6 +9,10 @@ const ProductsPage = () => {
   const params = useParams();
   const [data, setData] = useContext(DataContext);
   const categories = Categories();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const products = data
     .filter((d) => {
