@@ -1,11 +1,15 @@
 const showcaseModel = require("../Models/ShowcaseModel");
-
+const cloudinary = require("cloudinary");
 module.exports = {
-  create: function (req, res) {
+  create: async function (req, res) {
+    const result = await cloudinary.v2.uploader.upload(req.file.path, {
+      folder: "DesignX",
+      use_filename: true,
+    });
     showcaseModel
       .create({
-        imgs: req.files?.map((r) => r.path),
-        name: req.body.name,
+        img: result.secure_url,
+        ...req.body,
       })
       .then(() => {
         res.send({ message: "Item inserted successfully" });
