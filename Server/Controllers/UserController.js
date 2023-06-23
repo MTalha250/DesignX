@@ -23,7 +23,7 @@ module.exports = {
           const token = jwt.sign(
             { id: userInfo._id },
             req.app.get("secretKey"),
-            { expiresIn: "10m" }
+            { expiresIn: "1m" }
           );
           const userData = {
             fname: userInfo.fname,

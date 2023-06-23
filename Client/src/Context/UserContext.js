@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const UserContext = createContext("");
 
@@ -12,9 +13,15 @@ const UserState = (props) => {
       if (existingData) {
         const data = JSON.parse(existingData);
         const response = await axios.get(
-          process.env.REACT_APP_PATH + `user/currentUser/${data[1]}`
+          process.env.REACT_APP_PATH + `user/currentUser/${data[1]}`,
+          { headers: { "x-access-token": data[0] } }
         );
-        setUserData(response.data);
+        if (!response.data.error) {
+          setUserData(response.data);
+        } else {
+          localStorage.removeItem("User");
+          toast(response.data.message);
+        }
       }
     };
     getData();
