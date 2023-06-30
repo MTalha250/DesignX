@@ -101,7 +101,7 @@ const Nav = ({ logo }) => {
                 })
                 .map((d) => (
                   <SItem
-                    img={process.env.REACT_APP_PATH + d.imgs[0]}
+                    img={d.imgs[0]}
                     name={d.name}
                     id={d._id}
                     getInput={getInput}
@@ -179,7 +179,7 @@ const Nav = ({ logo }) => {
                 })
                 .map((d) => (
                   <SItem
-                    img={process.env.REACT_APP_PATH + d.imgs[0]}
+                    img={d.imgs[0]}
                     name={d.name}
                     id={d._id}
                     getInput={getInput}
